@@ -1,0 +1,249 @@
+<h1>{{patient.first_name}} {{patient.last_name}}</h1>
+<div class="individual-body">
+    <div class="individual-left">
+        <div class="personal-info">
+            <a href="../editData/{{patient._id}}"><img class="edit" src="/edit.png" alt="edit"></a>
+            <!--if has pohot, render. if not, show default icon-->
+            {{#ifPhoto patient.photo}}
+            <img class="portrait" src="/photo_{{patient._id}}.png" alt="self photo">
+            {{else}}
+            <img class="portrait" src="/photo_newuser.png" alt="self photo">
+            {{/ifPhoto}}
+            <h2>Name: {{patient.first_name}} {{patient.last_name}}</h2>
+            <h2>Clinician: {{patient.clinician.first_name}}</h2>
+            <div class="requirement">
+                <div class="top-two">
+                    <div class="blood-glucose">
+                        <img src="/blood_glucose_background.png" alt="blood-glucose-level">
+                        <h4>Blood Glucose Level</h4>
+                        {{#ifTrue patient.required_data.glucose}}
+                        <h5>{{patient.bound.glucose_lower}}-{{patient.bound.glucose_upper}} nmol/L</h5>
+                        {{else}}
+                        <h5>Not Required</h5>
+                        {{/ifTrue}}
+                    </div>
+                    <div class="weight">
+                        <img src="/weight.png" alt="weight">
+                        <h4>Weight</h4>
+                        {{#ifTrue patient.required_data.weight}}
+                        <h5>{{patient.bound.weight_lower}}-{{patient.bound.weight_upper}} Kg</h5>
+                        {{else}}
+                        <h5>Not Required</h5>
+                        {{/ifTrue}}
+                    </div>
+                </div>
+                <div class="bottom-two">
+                    <div class="exercise">
+                        <img src="/exercise.png" alt="exercise">
+                        <h4>Exercise</h4>
+                        {{#ifTrue patient.required_data.exercise}}
+                        <h5>{{patient.bound.exercise_lower}}-{{patient.bound.exercise_upper}} Steps</h5>
+                        {{else}}
+                        <h5>Not Required</h5>
+                        {{/ifTrue}}
+                    </div>
+                    <div class="insulin">
+                        <img src="/doses_background.png" alt="doses-of-insulin-taken">
+                        <h4>Doses of Insulin Taken</h4>
+                        {{#ifTrue patient.required_data.insulin}}
+                        <h5>{{patient.bound.insulin_lower}}-{{patient.bound.insulin_upper}} Doses</h5>
+                        {{else}}
+                        <h5>Not Required</h5>
+                        {{/ifTrue}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <form action="/clinician/individualData/support_msg/{{patient._id}}" method="post">
+            <div class="message">
+                <textarea class="support" type="text" id="supportMSG" required name="support_message"
+                    onblur="supportMSGInputTest()" placeholder="{{patient.support_message}}"></textarea>
+                <button class="message-save" id="supportMSGButton" type="submit">Save</button>
+            </div>
+        </form>
+    </div>
+    <div class="individual-data">
+        <div class="individual-top">
+            <div class="top-left">
+                <span><img src="/redcircle.png">Above normal range</span>
+                <span><img src="/greycircle.png">Below normal range</span>
+                <span><img src="/unrecorded.png">Data was not recorded</span>
+            </div>
+
+            <div class="top-right">
+                <form action="/clinician/individualData/searchDate/{{patient._id}}" method="post" id="dateForm">
+                    <select class="mm" placeholder="MM" name="month" onchange="submitDateForm()">
+                        <!--if the month have been searched, it will show the searched info-->
+                        {{#ifSearched input.month}}
+                        <option value={{input.month}}>{{month}}</option>
+                        {{/ifSearched}}
+                        <option name="" value="all">Month</option>
+                        <option name="January" value="01">January</option>
+                        <option name="February" value="02">February</option>
+                        <option name="March" value="03">March</option>
+                        <option name="April" value="04">April</option>
+                        <option name="May" value="05">May</option>
+                        <option name="June" value="06">June</option>
+                        <option name="July" value="07">July</option>
+                        <option name="August" value="08">August</option>
+                        <option name="September" value="09">September</option>
+                        <option name="October" value="10">October</option>
+                        <option name="November" value="11">November</option>
+                        <option name="December" value="12">December</option>
+                    </select>
+                    <select class="year" placeholder="Year" name="year" onchange="submitDateForm()">
+                        {{#ifSearched input.year}}
+                        <option value={{input.year}}>{{input.year}}</option>
+                        {{/ifSearched}}
+                        <option name="" value="all">Year</option>
+                        <option name="2021" value="2021">2021</option>
+                        <option name="2022" value="2022">2022</option>
+                    </select>
+                </form>
+            </div>
+        </div>
+        <div class="individual-table">
+            <table class="sam-table">
+                <tr>
+                    <th class="leftone">
+                        <div class="slope"></div>
+                    </th>
+                    <th class="table-weight">Weight<br>(Kg)</th>
+                    <th class="table-exercise">Exercise<br>(Step)</th>
+                    <th>Doses of Insulin Taken<br>(Doses)</th>
+                    <th>Blood Glucose Level<br>(nmol/L)</th>
+                </tr>
+                {{#each records}}
+                <tr>
+                    <td>{{this.record_id.date}}</td>
+                    <!--weight-->
+                    {{#ifHasDate this.record_id.data.weight.date}}
+                    <!--draw different color if data out of range-->
+                    <td style="background-color:
+                                {{#ifAboveRange this.record_id.data.weight.value ../patient.bound.weight_upper}}
+                                    #F29393
+                                {{else}}
+                                    {{#ifBelowRange this.record_id.data.weight.value ../patient.bound.weight_lower}}
+                                        #AAA9A9
+                                    {{/ifBelowRange}}
+                                {{/ifAboveRange}}
+                            ;">
+                        {{this.record_id.data.weight.value}}</td>
+                    {{else}}
+                    {{#ifNotRecorded this.record_id.data.weight.status}}
+                    <td><img src="/unrecorded.png"></td>
+                    {{else}}
+                    <td>
+                        <div class="ind_slope"></div>
+                    </td>
+                    {{/ifNotRecorded}}
+                    {{/ifHasDate}}
+
+                    <!--exercise-->
+                    {{#ifHasDate this.record_id.data.exercise.date}}
+                    <!--draw different color if data out of range-->
+                    <td style="background-color:
+                                {{#ifAboveRange this.record_id.data.exercise.value ../patient.bound.exercise_upper}}
+                                    #F29393
+                                {{else}}
+                                    {{#ifBelowRange this.record_id.data.exercise.value ../patient.bound.exercise_lower}}
+                                        #AAA9A9
+                                    {{/ifBelowRange}}
+                                {{/ifAboveRange}}
+                            ;">
+                        {{this.record_id.data.exercise.value}}</td>
+                    {{else}}
+                    {{#ifNotRecorded this.record_id.data.exercise.status}}
+                    <td><img src="/unrecorded.png"></td>
+                    {{else}}
+                    <td>
+                        <div class="ind_slope"></div>
+                    </td>
+                    {{/ifNotRecorded}}
+                    {{/ifHasDate}}
+
+                    <!--insulin-->
+                    {{#ifHasDate this.record_id.data.insulin.date}}
+                    <!--draw different color if data out of range-->
+                    <td style="background-color:
+                                {{#ifAboveRange this.record_id.data.insulin.value ../patient.bound.insulin_upper}}
+                                    #F29393
+                                {{else}}
+                                    {{#ifBelowRange this.record_id.data.insulin.value ../patient.bound.insulin_lower}}
+                                        #AAA9A9
+                                    {{/ifBelowRange}}
+                                {{/ifAboveRange}}
+                            ;">
+                        {{this.record_id.data.insulin.value}}</td>
+                    {{else}}
+                    {{#ifNotRecorded this.record_id.data.insulin.status}}
+                    <td><img src="/unrecorded.png"></td>
+                    {{else}}
+                    <td>
+                        <div class="large_slope"></div>
+                    </td>
+                    {{/ifNotRecorded}}
+                    {{/ifHasDate}}
+
+                    <!--glucose-->
+                    {{#ifHasDate this.record_id.data.glucose.date}}
+                    <!--draw different color if data out of range-->
+                    <td style="background-color:
+                                {{#ifAboveRange this.record_id.data.glucose.value ../patient.bound.glucose_upper}}
+                                    #F29393
+                                {{else}}
+                                    {{#ifBelowRange this.record_id.data.glucose.value ../patient.bound.glucose_lower}}
+                                        #AAA9A9
+                                    {{/ifBelowRange}}
+                                {{/ifAboveRange}}
+                            ;">
+                        {{this.record_id.data.glucose.value}}</td>
+                    {{else}}
+                    {{#ifNotRecorded this.record_id.data.glucose.status}}
+                    <td><img src="/unrecorded.png"></td>
+                    {{else}}
+                    <td>
+                        <div class="large_slope"></div>
+                    </td>
+                    {{/ifNotRecorded}}
+                    {{/ifHasDate}}
+                </tr>
+                {{/each}}
+
+            </table>
+        </div>
+    </div>
+</div>
+<form action="/clinician/individualData/{{patient._id}}/addNote" method="post">
+    <div class="note">
+        <div class="previous-note">
+            <h6>Previous Notes</h6>
+            <div class="pre-note">
+                <ul>
+                    {{#each notes}}
+                    <li>
+                        <div class="detail">{{this.subject}}</div>
+                        <div class="time">{{this.timeStamp}}</div>
+                    </li>
+                    {{/each}}
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="add-note">
+            <div class="subject">
+                <input type="text" id="text" name="subject" pattern="^[^\s]+[\s]*.+$" required placeholder="Subject">
+            </div>
+            <div class="today-note">
+                <textarea class="today-add" type="text" id="addNote" required name="content" onblur="noteInputTest()"
+                    placeholder="Add a note..."></textarea>
+            </div>
+        </div>
+    </div>
+    <button class="more-detail" onclick="window.location.href='/clinician/individual/{{patient._id}}/prevNotes'"
+        type="button">More Detail</button>
+    <button class="note-save" id="noteSaveButton" type="submit">Save</button>
+</form>
+
+<script src="/js/hbshelp.js"></script>

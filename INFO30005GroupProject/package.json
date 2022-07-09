@@ -1,0 +1,39 @@
+{
+  "name": "daibetesathome",
+  "version": "1.0.0",
+  "description": "This is the repository of Team ALL GOOD.  \r The team members are Jiayuan Huang, Jiexi Qu, Zhikai Wu, Zilun Li, Tao Yu.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "prettier": "prettier --single-quote --no-semi --tab-width 4 --write'**/*.js' '*.js'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Arthurorz/INFO30005GroupProject.git"
+  },
+  "author": "ALL GOOD",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Arthurorz/INFO30005GroupProject/issues"
+  },
+  "homepage": "https://github.com/Arthurorz/INFO30005GroupProject#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "chart.js": "^3.7.1",
+    "express": "^4.18.1",
+    "express-flash": "^0.0.2",
+    "express-handlebars": "^6.0.5",
+    "express-session": "^1.17.3",
+    "express-validator": "^6.14.0",
+    "mongodb": "^4.6.0",
+    "mongoose": "^6.3.3",
+    "passport": "^0.5.2",
+    "passport-local": "^1.0.0",
+    "password": "^0.1.1",
+    "dotenv": "^16.0.1"
+  },
+  "devDependencies": {
+    "prettier": "^2.6.2"
+  }
+}

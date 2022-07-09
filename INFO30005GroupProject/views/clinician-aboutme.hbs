@@ -1,0 +1,25 @@
+<h1>About Me</h1>
+<div class=aboutMe-body>
+    <div class=aboutMe-left>
+        <!--if have photo then show it, if not, use a defalut icon-->
+        {{#ifPhoto clinician.photo}}
+        <img class="self-picture" src="/photo_{{clinician._id}}.png" alt="self photo">
+        {{else}}
+        <img class="self-picture" src="/photo_newuser.png" alt="self photo">
+        {{/ifPhoto}}
+        <div class="userName">Name: Doctor {{clinician.last_name}}</div>
+        <div class="birth">Year of birth: {{clinician.yearofbirth}}</div>
+        <div class="change"><a href="/clinician/changepass">Change Password</a></div>
+    </div>
+    <div class="aboutMe-right">
+        <h2 class="header">Here's a little about me</h2>
+        <form action="/clinician/aboutMe" method="post">
+            <div class="textBoarder">
+                <div class="self-intro">
+                    <textarea type="text" id="text" name="brief_bio" placeholder="{{clinician.brief_bio}}"></textarea>
+                </div>
+            </div>
+            <button class="saveButton" name="popBox" onclick="popBox()" type="submit">Save</button>
+        </form>
+    </div>
+</div>

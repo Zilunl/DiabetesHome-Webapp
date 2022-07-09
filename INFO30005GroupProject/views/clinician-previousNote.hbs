@@ -1,0 +1,12 @@
+<h1>Previous Note</h1>
+<div>
+    {{#each notes}}
+    <div class="noteLine">
+        <div class="notelineTop">
+            <span>{{this.subject}}</span>
+            <span>{{this.timeStamp}}</span>
+        </div>
+        <p class="notelineBottom">{{this.content}}</p>
+    </div>
+    {{/each}}
+</div>

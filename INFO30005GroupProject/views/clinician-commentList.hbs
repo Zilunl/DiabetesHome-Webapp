@@ -1,0 +1,48 @@
+<h1>Comment List</h1>
+<div class="commentSearch">
+    <form action="/clinician/comment/search" method="post">
+        <input type="text" placeholder="Patient Name" name="patientName" pattern="[A-Za-z]*" title="letters only">
+        <button type="submit"><img src="/search_icon.png" alt="search"></img></button>
+    </form>
+</div>
+
+<div>
+    <!--error message-->
+    {{#ifMSG msg}}
+    <div class="notFound">{{msg}}</div>
+    {{/ifMSG}}
+
+    {{#each commentList}}
+    <div class="commentLine">
+        {{#ifChecked this.new}}
+        <img class="readComment" src="/readComment.png" alt="">
+        {{/ifChecked}}
+        <div class="commentLeft">
+            {{#ifPhoto this.photo}}
+            <img src="/photo_{{this.patient_id}}.png" alt="self photo">
+            {{else}}
+            <img src="/photo_newuser.png" alt="self photo">
+            {{/ifPhoto}}
+            <span class="patientName" ><a href='/clinician/individualData/{{this.patient_id}}'>{{this.patientName}}</a></span>
+        </div>
+
+        <div class="commentRight">
+            <div>
+                <!--check if the data are in the range-->
+                {{#ifAboveRange this.value this.upper_bound}}
+                <span class="commentUpper">{{this.type}}: {{this.value}} {{this.unit}}</span>
+                {{else}}
+                {{#ifBelowRange this.value this.lower_bound}}
+                <span class="commentLower">{{this.type}}: {{this.value}} {{this.unit}}</span>
+                {{else}}
+                <span class="commentData">{{this.type}}: {{this.value}} {{this.unit}}</span>
+                {{/ifBelowRange}}
+                {{/ifAboveRange}}
+                <span>Normal Range: {{this.lower_bound}}-{{this.upper_bound}} {{this.unit}}</span>
+                <span>{{this.timeStamp}}</span>
+            </div>
+            <p>{{this.comment}}</p>
+        </div>
+    </div>
+    {{/each}}
+</div>

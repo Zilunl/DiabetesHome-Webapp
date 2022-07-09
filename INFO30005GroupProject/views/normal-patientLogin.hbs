@@ -1,0 +1,24 @@
+<div class="login-background"></div>
+<div class="login">
+    <h4 class="forgetpassTitle">Patient Login</h4>
+    {{#each flash}}
+    <div class="alertMessage">
+        <p class="alert">{{this}}</p>
+    </div>
+    {{/each}}
+    <div class="loginContainer">
+        <form action="/patient/login" method="post">
+            <p for="email">Email Address:</p>
+            <input type="email" id="emails" name="email" placeholder="123@xxx.com">
+            <p for="password">Password:</p>
+            <input type="password" id="pass" name="password" placeholder="at least 8 characters">
+            <a class="ForgetPassword" href='/patient/forgetpass'>Patient Forget Password?</a>
+            <div class="mid-login">
+                <button class="middle-login" type="submit">Login</button>
+            </div>
+        </form>
+    </div>
+    <div class="shiftRole">
+        <a href="/clinician/login">I am not a Patient, I am a Clinician</a>
+    </div>
+</div>

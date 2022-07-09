@@ -1,0 +1,23 @@
+<h1>Change Password</h1>
+<div class="error">
+    <p class="errormsg">{{error}}</p>
+</div>
+<form action="changepass" method="post">
+    <div class="changepass-container">
+        <label for="pass">Old Password:</label>
+        <input type="password" id="oldPassword" name="oldPassword" required placeholder="at least 8 characters">
+        <label for="pass">New Password:</label>
+        <input type="password" id="password" name="password" pattern="^[^\s]*$" title="can not have space" required onblur="clicktest()"
+            placeholder="at least 8 characters">
+        <label for="pass">Confirm Password:</label>
+        <input type="password" id="confirmPassword" name="confirm_password" required onblur="clicktest()"
+            placeholder="confirm the password">
+        <span id="msg"></span>
+    </div>
+    <button class="change-login" onclick="isChangePass()" type="submit">Save</button>
+</form>
+
+<script src="/js/hbshelp.js"></script>
+<script>
+    isDarkmode({{ patient.darkmode }})
+</script>

@@ -1,0 +1,25 @@
+<div class="forget-error">
+    <p class="forget-errormsg">{{error}}</p>
+</div>
+<div class="forget-body">
+    <div class="login">
+        <span class="forgetpassTitle">Forget Password</span>
+        <form action="/patient/forgetpass" method="post">
+            <div class="forget-container">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required placeholder="123@xxx.com"
+                    pattern="[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="must be a valid email address">
+                <label for="pass">Password:</label>
+                <input type="password" id="password" name="password" pattern="^[^\s]*$" title="can not have space" required onblur="clicktest()"
+                    placeholder="at least 8 characters">
+                <label for="pass">Confirm Password:</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required onblur="clicktest()"
+                    placeholder="confirm the password">
+                <span id="msg"></span>
+            </div>
+            <button class="middle-login" onclick="isForgetPass()" type="submit">Login</button>
+        </form>
+    </div>
+</div>
+
+<script src="/js/hbshelp.js"></script>

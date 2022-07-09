@@ -1,0 +1,127 @@
+<div class="top">
+    <div class="topleft">
+        <span><img src="/redcircle.png">Above normal range</span>
+        <span><img src="/greycircle.png">Below normal range</span>
+        <span><img src="/unrecorded.png">Data was not recorded</span>
+    </div>
+    <div class="topright">
+        <form action="/clinician/dashboard/search" method="post">
+            <input type="text" placeholder="Patient Name" name="patientName" pattern="[A-Za-z]*" title="letters only">
+            <button type="submit"><img src="/search_icon.png" alt="search"></img></button>
+        </form>
+    </div>
+</div>
+<div class="patient-table">
+    <table>
+        <tr>
+            <th class="one-slope">
+                <div class="slope"></div>
+            </th>
+            <th class="one-weight">Weight<br>(Kg)</th>
+            <th class="one-exercise">Exercise<br>(Step)</th>
+            <th>Doses of Insulin Taken<br>(Doses)</th>
+            <th>Blood Glucose Level<br>(nmol/L)</th>
+        </tr>
+
+        {{#each patientList}}
+        <tr>
+            <td><a href='/clinician/individualData/{{this.patient_id}}'>{{this.first_name}} {{this.last_name}}<a></td>
+
+            <!--weight-->
+            {{#ifRecorded this.today_record.data.weight.status}}
+            <!--check if the data are in the range-->
+            <td style="background-color:
+                        {{#ifAboveRange this.today_record.data.weight.value this.bound.weight_upper}}
+                            #F29393
+                        {{else}}
+                            {{#ifBelowRange this.today_record.data.weight.value this.bound.weight_lower}}
+                                #AAA9A9
+                            {{/ifBelowRange}}
+                        {{/ifAboveRange}}
+                    ;">
+                {{this.today_record.data.weight.value}}</td>
+            {{else}}
+            {{#ifNotRecorded this.today_record.data.weight.status}}
+            <td><img src="/unrecorded.png"></td>
+            {{else}}
+            <td>
+                <div class="inside_slope"></div>
+            </td>
+            {{/ifNotRecorded}}
+            {{/ifRecorded}}
+
+            <!--exercise-->
+            {{#ifRecorded this.today_record.data.exercise.status}}
+            <!--check if the data are in the range-->
+            <td style="background-color:
+                        {{#ifAboveRange this.today_record.data.exercise.value this.bound.exercise_upper}}
+                            #F29393
+                        {{else}}
+                            {{#ifBelowRange this.today_record.data.exercise.value this.bound.exercise_lower}}
+                                #AAA9A9
+                            {{/ifBelowRange}}
+                        {{/ifAboveRange}}
+                    ;">
+                {{this.today_record.data.exercise.value}}</td>
+            {{else}}
+            {{#ifNotRecorded this.today_record.data.exercise.status}}
+            <td><img src="/unrecorded.png"></td>
+            {{else}}
+            <td>
+                <div class="inside_slope"></div>
+            </td>
+            {{/ifNotRecorded}}
+            {{/ifRecorded}}
+
+            <!--insulin-->
+            {{#ifRecorded this.today_record.data.insulin.status}}
+            <!--check if the data are in the range-->
+            <td style="background-color:
+                        {{#ifAboveRange this.today_record.data.insulin.value this.bound.insulin_upper}}
+                            #F29393
+                        {{else}}
+                            {{#ifBelowRange this.today_record.data.insulin.value this.bound.insulin_lower}}
+                                #AAA9A9
+                            {{/ifBelowRange}}
+                        {{/ifAboveRange}}
+                    ;">
+                {{this.today_record.data.insulin.value}}</td>
+            {{else}}
+            {{#ifNotRecorded this.today_record.data.insulin.status}}
+            <td><img src="/unrecorded.png"></td>
+            {{else}}
+            <td>
+                <div class="large_slope"></div>
+            </td>
+            {{/ifNotRecorded}}
+            {{/ifRecorded}}
+
+            <!--glucose-->
+            {{#ifRecorded this.today_record.data.glucose.status}}
+            <!--check if the data are in the range-->
+            <td style="background-color:
+                        {{#ifAboveRange this.today_record.data.glucose.value this.bound.glucose_upper}}
+                            #F29393
+                        {{else}}
+                            {{#ifBelowRange this.today_record.data.glucose.value this.bound.glucose_lower}}
+                                #AAA9A9
+                            {{/ifBelowRange}}
+                        {{/ifAboveRange}}
+                    ;">
+                {{this.today_record.data.glucose.value}}</td>
+            {{else}}
+            {{#ifNotRecorded this.today_record.data.glucose.status}}
+            <td><img src="/unrecorded.png"></td>
+            {{else}}
+            <td>
+                <div class="large_slope"></div>
+            </td>
+            {{/ifNotRecorded}}
+            {{/ifRecorded}}
+        </tr>
+        {{/each}}
+    </table>
+    {{#ifMSG msg}}
+    <div class="notFound">{{msg}}</div>
+    {{/ifMSG}}
+</div>

@@ -1,0 +1,115 @@
+<h1>Motivation</h1>
+<div class="motiContainer">
+    <div class="selfRank">
+        <p class="rank">Your Rank:&nbsp;{{rank}}</p>
+        {{#ifPhoto thisPatient.photo}}
+        <img class="motiPhoto" src="/photo_{{thisPatient._id}}.png" alt="self photo">
+        {{else}}
+        <img class="motiPhoto" src="/photo_newuser.png" alt="self photo">
+        {{/ifPhoto}}
+        <p>{{thisPatient.screen_name}}</p>
+        <p>Participation:&nbsp;{{thisPatient.engagement}}%</p>
+        {{#ifreach80 thisPatient.engagement}}
+        <img class="badge" src="/badge.png" alt="badge">
+        {{else}}
+        <img class="badge" src="/grey_badge.png" alt="badge">
+        {{/ifreach80}}
+        <button class="badgeAlert" name="badgeInfo"
+            onClick="alert('You will get the badge on the left side if your overall engagement rate since you started using the app is more than 80%.')"><img
+                class="badgeInfo" src="/badge_info.png" alt=""></button>
+    </div>
+    <div class="leaderboard">
+        <div class="firstLine">
+            <img class="crown" src="/crown.png" alt="">
+            {{#ifPhoto first.photo}}
+            <img class="numberOne" src="/photo_{{first._id}}.png" alt="self photo">
+            {{else}}
+            <img class="numberOne" src="/photo_newuser.png" alt="self photo">
+            {{/ifPhoto}}
+            <span class="ranking">1</span>
+        </div>
+        <div class="secondLine">
+            {{#ifPhoto second.photo}}
+            <img class="lineTwo_pic" src="/photo_{{second._id}}.png" alt="self photo">
+            {{else}}
+            <img class="lineTwo_pic" src="/photo_newuser.png" alt="self photo">
+            {{/ifPhoto}}
+            {{#ifPhoto third.photo}}
+            <img class="lineTwo_pic" src="/photo_{{third._id}}.png" alt="self photo">
+            {{else}}
+            <img class="lineTwo_pic" src="/photo_newuser.png" alt="self photo">
+            {{/ifPhoto}}
+        </div>
+        <div class="thirdLine">
+            <span class="ranking">2</span>
+            <span class="ranking">3</span>
+        </div>
+        <div class="board">
+            <div class="boardLine">
+                <span class="boardRank">1</span>
+                {{#ifPhoto first.photo}}
+                <img class="boardPic" src="/photo_{{first._id}}.png" alt="self photo">
+                {{else}}
+                <img class="boardPic" src="/photo_newuser.png" alt="self photo">
+                {{/ifPhoto}}
+                <div class="lineRight">
+                    <span>{{first.screen_name}}</span>
+                    <span>{{first.engagement}}%</span>
+                </div>
+            </div>
+            <div class="boardLine">
+                <span class="boardRank">2</span>
+                {{#ifPhoto second.photo}}
+                <img class="boardPic" src="/photo_{{second._id}}.png" alt="self photo">
+                {{else}}
+                <img class="boardPic" src="/photo_newuser.png" alt="self photo">
+                {{/ifPhoto}}
+                <div class="lineRight">
+                    <span>{{second.screen_name}}</span>
+                    <span>{{second.engagement}}%</span>
+                </div>
+            </div>
+            <div class="boardLine">
+                <span class="boardRank">3</span>
+                {{#ifPhoto third.photo}}
+                <img class="boardPic" src="/photo_{{third._id}}.png" alt="self photo">
+                {{else}}
+                <img class="boardPic" src="/photo_newuser.png" alt="self photo">
+                {{/ifPhoto}}
+                <div class="lineRight">
+                    <span>{{third.screen_name}}</span>
+                    <span>{{third.engagement}}%</span>
+                </div>
+            </div>
+            <div class="boardLine">
+                <span class="boardRank">4</span>
+                {{#ifPhoto fourth.photo}}
+                <img class="boardPic" src="/photo_{{fourth._id}}.png" alt="self photo">
+                {{else}}
+                <img class="boardPic" src="/photo_newuser.png" alt="self photo">
+                {{/ifPhoto}}
+                <div class="lineRight">
+                    <span>{{fourth.screen_name}}</span>
+                    <span>{{fourth.engagement}}%</span>
+                </div>
+            </div>
+            <div class="boardLine">
+                <span class="boardRank">5</span>
+                {{#ifPhoto fifth.photo}}
+                <img class="boardPic" src="/photo_{{fifth._id}}.png" alt="self photo">
+                {{else}}
+                <img class="boardPic" src="/photo_newuser.png" alt="self photo">
+                {{/ifPhoto}}
+                <div class="lineRight">
+                    <span>{{fifth.screen_name}}</span>
+                    <span>{{fifth.engagement}}%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/hbshelp.js"></script>
+<script>
+    isDarkmode({{ thisPatient.darkmode }})
+</script>

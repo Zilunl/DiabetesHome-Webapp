@@ -1,0 +1,31 @@
+<header class="patient-header">
+    <div class="nav-links">
+        <input type="checkbox" id="checkbox_toggle" />
+        <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+        <ul class="menu">
+            <li><a href="/patient/homepage">HOME</a></li>
+            <li><a href="/patient/moredata">DATA</a></li>
+            <li><a href="/patient/motivation">MOTIVATION</a></li>
+            <li><a href="/patient/aboutThisWeb">ABOUT WEBSITE</a></li>
+            <li><a href="/patient/aboutDiabetes">ABOUT DIABETES</a></li>
+            <li class="bigScreen"><a href="/patient/aboutme">ABOUT ME</a></li>
+            <form action="/normal/logout" method="get">
+                <li class="smallScreen"><button>LOG OUT</button></li>
+            </form>
+            
+            {{!-- <input type="checkbox" class="checkbox" id="chk">
+            <label for="chk" class="label">
+                <img class="fa-moon" src="/exercise.png">
+                <img class="fa-sun" src="/exercise.png">
+                <div id="ball"></div>
+            </label> --}}
+            
+        </ul>
+    </div>
+    <div><img class="patient-logo" onclick="window.location.href='/patient/homepage'" src="/logo.png" alt="logo"></div>
+    <div><img class="patient-mobile-aboutMe" onclick="window.location.href='/patient/aboutme'" src="/account.png" alt="about-me"></div>
+    {{!-- <div><button class="patient-web-logOut" onclick="window.location.href=''" type="button">Log Out</button></div> --}}
+     <div><form action="/normal/logout" method="get">
+        <button class="patient-web-logOut">Log Out</button>
+    </form></div>
+</header>

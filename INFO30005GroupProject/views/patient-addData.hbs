@@ -1,0 +1,39 @@
+{{#ifglucose type}}
+<h1>Blood Glucose Level</h1>
+<form action="/patient/addData/{{type}}" method="post">
+    <div class ="dataInput">
+        <input type="number" required="required" step="0.01" id="addData" name="addData" placeholder="0.00"><span>nmol/L</span>
+        <textarea type="text" id="addComment" name="addComment" onblur="commentInputTest()" placeholder="Please Leave Your Comment and no more than 140 letters"></textarea>
+    </div>
+{{/ifglucose}}    
+{{#ifweight type}}
+<h1>Weight</h1>
+<form action="/patient/addData/{{type}}" method="post">
+    <div class ="dataInput">
+        <input type="number" required="required" step="0.01" id="addData" name="addData" placeholder="0.00"><span>kg</span>
+        <textarea type="text" id="addComment" name="addComment" onblur="commentInputTest()" placeholder="Please Leave Your Comment and no more than 140 letters"></textarea>
+    </div>
+{{/ifweight}}  
+{{#ifexercise type}}
+<h1>Exercise</h1>
+<form action="/patient/addData/{{type}}" method="post">
+    <div class ="dataInput">
+        <input type="number" required="required" id="addData" name="addData" placeholder="0"><span>Step count</span>
+        <textarea type="text" id="addComment" name="addComment" onblur="commentInputTest()" placeholder="Please Leave Your Comment and no more than 140 letters"></textarea>
+    </div>
+{{/ifexercise}}        
+{{#ifinsulin type}}
+<h1>Doses of Insulin Taken Today</h1>
+<form action="/patient/addData/{{type}}" method="post">
+    <div class ="dataInput">
+        <input type="number"required="required" id="addData" name="addData" placeholder="0"><span>doses</span>
+        <textarea type="text" id="addComment" name="addComment" onblur="commentInputTest()" placeholder="Please Leave Your Comment and no more than 140 letters"></textarea>
+    </div>
+{{/ifinsulin}} 
+    <button class="saveButton" id="saveButton" name="popBox" type="submit" onclick="return isAddDataNull()">Save</button>
+</form>
+
+<script src="/js/hbshelp.js"></script>
+<script>
+    isDarkmode({{patient.darkmode}})
+</script>

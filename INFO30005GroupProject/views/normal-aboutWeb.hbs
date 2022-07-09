@@ -1,0 +1,50 @@
+<h1>About This Website</h1>
+<div class="aboutWeb-body">
+    <div class="aboutWeb-top">
+        <div>
+            <img src="/diabetes.jpg" alt="diabetes">
+        </div>
+        <div>
+            <article class="article">
+                <h2>The Website Overview</h2>
+                <p>This website is built for diabetes patients and clinicians to effectively manage and communicate with
+                    each other. With this website, clinicians can manage their patients, harvest health data and set
+                    suggested range for each patient. They can dynamically change what data need to be recorded for each
+                    individual patient and provide each patient most personal health monitor plan. Patients can upload
+                    data suggested by their clinicians and keep track with their all-time long data records to supervise
+                    their health status. Patients also will be able to attach comment on any data they record so that
+                    they can recall what happened at that time. Please log in to access all features.</p>
+            </article>
+        </div>
+    </div>
+    <div class="aboutWeb-bottom">
+        <div class="teamwork">
+            <img src="/teamwok.jpg" alt="teamwork">
+        </div>
+        <div>
+            <article class="article">
+                <h2>Who Built It</h2>
+                <p>Team “All Good” from University of Melbourne build this website. The producers are Jiayuan Huang,
+                    Jiexi Qu, Tao Yu, Zhikai Wu, Zilun Li (in alphabetical order).</p>
+                <div class="email">
+                    <li>Jiayuan Huang: jiayuan@student.unimelb.edu.au</li>
+                    <li>Jiexi Qu: jiexiq@student.unimelb.edu.au</li>
+                    <li>Tao Yu: ty2@student.unimelb.edu.au</li>
+                    <li>Zhikai Wu: zhikaiw1@student.unimelb.edu.au</li>
+                    <li>Zilun Li: zilunl@student.unimelb.edu.au</li>
+                </div>
+            </article>
+        </div>
+    </div>
+</div>
+
+{{#ifNotLogin patient.screen_name}}
+<div class="aboutWeb-footer">
+    <h3>If you want to access more features, please <a href="/patient/login">Login.</a></span></h3>
+</div>
+{{/ifNotLogin}}
+
+<script src="/js/hbshelp.js"></script>
+<script>
+    isDarkmode({{ patient.darkmode }})
+</script>

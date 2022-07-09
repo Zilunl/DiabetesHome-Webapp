@@ -1,0 +1,94 @@
+<h1>About Me</h1>
+<form action="/patient/aboutme/mode" method="post" id="modeForm">
+    <div class="mood">
+        <input type="checkbox" class="checkbox" id="chk" name="check">
+        <label class="mood-change" for="chk">
+            <img class="moon" src="/moon.png" alt="night">
+            <img class="sun" src="/sun.png" alt="day">
+            <div class="ball"></div>
+        </label>
+    </div>
+</form>
+<div class="edit-aboutme">
+    <form action="/patient/aboutme" method="post">
+        <input type="checkbox" id="checkbox-toggle">
+        <div class="aboutme-text">
+            <label for="checkbox-toggle" class="aboutme-edit"><img class="edit-button" src="/edit.png"
+                    alt="edit"></label>
+            <div class="aboutme-body">
+                <div class="sam-detail">
+                    {{#ifPhoto patient.photo}}
+                    <img class="userphoto" src="/photo_{{patient._id}}.png" alt="self photo">
+                    {{else}}
+                    <img class="userphoto" src="/photo_newuser.png" alt="self photo">
+                    {{/ifPhoto}}
+                    <ul class="about-detail">
+                        <li>Full Name: {{patient.first_name}} {{patient.last_name}}</li>
+                        <li>Screen Name: {{patient.screen_name}}</li>
+                        <li>Height: {{patient.height}}m</li>
+                        <li>Year of birth: {{patient.yearofbirth}}</li>
+                        <li>Clinician: Doctor {{clinician.first_name}}</li>
+                        <li>Email Address: {{patient.email}}</li>
+                        <li><a href="/patient/changepass">Change Password</a></li>
+
+                    </ul>
+                </div>
+                <div class="text-bio">
+                    <h2>A Brief Text Bio</h2>
+                    <div class="bio-detail">
+                        {{patient.brief_bio}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="edit-page">
+            <label for="checkbox-toggle" class="aboutme-edit"><img class="aboutme-delete" src="/delete.png"
+                    alt="delete"></label>
+            <div class="edit-body">
+                <div class="edit-detail">
+                    {{#ifPhoto patient.photo}}
+                    <img class="userphoto" src="/photo_{{patient._id}}.png" alt="self photo">
+                    {{else}}
+                    <img class="userphoto" src="/photo_newuser.png" alt="self photo">
+                    {{/ifPhoto}}
+                    </label>
+                    <div class="detail-change">
+                        <div class="user-info">
+                            <label for="text">Full Name:</label>
+                            <li class="short">{{patient.first_name}} {{patient.last_name}}</li>
+                        </div>
+                        <div class="user-info">
+                            <label for="text">Screen Name:</label>
+                            <input type="text" id="name" name="name" placeholder="{{patient.screen_name}}">
+                        </div>
+                        <div class="user-info">
+                            <label for="number">Height:</label>
+                            <input type="number" id="height" name="height" min="0" max="10" step="0.01"
+                                placeholder="{{patient.height}}m">
+                        </div>
+                        <div class="user-info">
+                            <label for="number">Year of birth:</label>
+                            <li class="short">{{patient.yearofbirth}}</li>
+                        </div>
+                        <div class="user-info">
+                            <label for="text">Clinician:</label>
+                            <li class="short">Doctor {{clinician.first_name}}</li>
+                        </div>
+                        <div class="user-info">
+                            <label for="email">Email Address:</label>
+                        </div>
+                        <li>{{patient.email}}</li>
+
+                    </div>
+                </div>
+                <div class="user-bio">
+                    <label for="text">A Breif Text Bio:</label>
+                    <textarea type="text" id="text" name="text" placeholder="{{patient.brief_bio}}"></textarea>
+                </div>
+            </div>
+            <button class="saveButton" name="popBox" type="submit">Save</button>
+    </form>
+</div>
+
+<script src="/js/hbshelp.js"></script>
+<script>setDarkmode({{ patient.darkmode }})</script>

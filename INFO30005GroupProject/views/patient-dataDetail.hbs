@@ -1,0 +1,124 @@
+<h1>Daily detail data</h1>
+<div class="dataContainer">
+    {{#ifNotRequired record.data.glucose.status}}
+    {{else}}
+
+    {{#ifHasDate record.data.glucose.date}}
+    <div class="dataDatail">
+        <p class="dataType">Blood Glucose Level</p>
+        <div class="dataBox" style="background-color:
+                {{#ifAboveRange record.data.glucose.value patient.bound.glucose_upper}}
+                    #F29393
+                {{else}}
+                    {{#ifBelowRange record.data.glucose.value patient.bound.glucose_lower}}
+                        #AAA9A9
+                    {{/ifBelowRange}}
+                {{/ifAboveRange}}
+            ;">
+            <p class="dataNumber">{{record.data.glucose.value}}&nbsp;<span>nmol/L</span></p>
+            <p>{{record.data.glucose.comment}}</p>
+            <p>{{record.data.glucose.date}}</p>
+        </div>
+    </div>
+    {{else}}
+    <div class="dataDatail">
+        <p class="dataType">Blood Glucose Level</p>
+        <div class="dataBox">
+            <p>Not Recorded</p>
+        </div>
+    </div>
+    {{/ifHasDate}}
+    {{/ifNotRequired}}
+
+    {{#ifNotRequired record.data.weight.status}}
+    {{else}}
+    {{#ifHasDate record.data.weight.date}}
+    <div class="dataDatail">
+        <p class="dataType">Weight</p>
+        <div class="dataBox" style="background-color:
+                {{#ifAboveRange record.data.weight.value patient.bound.weight_upper}}
+                    #F29393
+                {{else}}
+                    {{#ifBelowRange record.data.weight.value patient.bound.weight_lower}}
+                        #AAA9A9
+                    {{/ifBelowRange}}
+                {{/ifAboveRange}}
+            ;">
+            <p class="dataNumber">{{record.data.weight.value}}&nbsp;<span>kg</span></p>
+            <p>{{record.data.weight.comment}}</p>
+            <p>{{record.data.weight.date}}</p>
+        </div>
+    </div>
+    {{else}}
+    <div class="dataDatail">
+        <p class="dataType">Weight</p>
+        <div class="dataBox">
+            <p>Not Recorded</p>
+        </div>
+    </div>
+    {{/ifHasDate}}
+    {{/ifNotRequired}}
+
+    {{#ifNotRequired record.data.exercise.status}}
+    {{else}}
+    {{#ifHasDate record.data.exercise.date}}
+    <div class="dataDatail">
+        <p class="dataType">exercise</p>
+        <div class="dataBox" style="background-color:
+                {{#ifAboveRange record.data.exercise.value patient.bound.exercise_upper}}
+                    #F29393
+                {{else}}
+                    {{#ifBelowRange record.data.exercise.value patient.bound.exercise_lower}}
+                        #AAA9A9
+                    {{/ifBelowRange}}
+                {{/ifAboveRange}}
+            ;">
+            <p class="dataNumber">{{record.data.exercise.value}}&nbsp;<span>steps</span></p>
+            <p>{{record.data.exercise.comment}}</p>
+            <p>{{record.data.exercise.date}}</p>
+        </div>
+    </div>
+    {{else}}
+    <div class="dataDatail">
+        <p class="dataType">exercise</p>
+        <div class="dataBox">
+            <p>Not Recorded</p>
+        </div>
+    </div>
+    {{/ifHasDate}}
+    {{/ifNotRequired}}
+
+    {{#ifNotRequired record.data.insulin.status}}
+    {{else}}
+    {{#ifHasDate record.data.insulin.date}}
+    <div class="dataDatail">
+        <p class="dataType">insulin</p>
+        <div class="dataBox" style="background-color:
+                {{#ifAboveRange record.data.insulin.value patient.bound.insulin_upper}}
+                    #F29393
+                {{else}}
+                    {{#ifBelowRange record.data.insulin.value patient.bound.insulin_lower}}
+                        #AAA9A9
+                    {{/ifBelowRange}}
+                {{/ifAboveRange}}
+                ;">
+            <p class="dataNumber">{{record.data.insulin.value}}&nbsp;<span>doses</span></p>
+            <p>{{record.data.insulin.comment}}</p>
+            <p>{{record.data.insulin.date}}</p>
+        </div>
+    </div>
+    {{else}}
+    <div class="dataDatail">
+        <p class="dataType">insulin</p>
+        <div class="dataBox">
+            <p>Not Recorded</p>
+        </div>
+    </div>
+    {{/ifHasDate}}
+    {{/ifNotRequired}}
+</div>
+
+<script src="/js/hbshelp.js"></script>
+<script>
+    isDarkmode({{ patient.darkmode }})
+</script>

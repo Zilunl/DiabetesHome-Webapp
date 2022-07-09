@@ -1,0 +1,141 @@
+<h1>Edit The Data</h1>
+<form action="/clinician/editData/{{patientId}}" method="post">
+        <div class="editData-body">
+                <div>
+                        <div class="chooseRange">
+                                <!--if already required, need to show a checked box-->
+                                {{#ifChecked patient.required_data.weight}}
+                                <input class="chooseBox" type="checkbox" name="weight_check" checked="checked">
+                                {{else}}
+                                <input class="chooseBox" type="checkbox" name="weight_check">
+                                {{/ifChecked}}
+                                <span class="category">Weight</span>
+                                <div class="textLine">
+                                        {{#ifChecked patient.required_data.weight}}
+                                        From
+                                        <span class="rangeBox"><input class="textBox" type="number" step="0.01"
+                                                        name="weight_lower" placeholder="70"
+                                                        value={{patient.bound.weight_lower}}></span>
+                                        To
+                                        <span class="rangeBox"><input class="textBox" type="number" step="0.01"
+                                                        name="weight_lower" placeholder="100"
+                                                        value={{patient.bound.weight_upper}}></span>
+                                        Kg
+                                        {{else}}
+                                        From
+                                        <span class="rangeBox"><input class="textBox" type="number" step="0.01"
+                                                        name="weight_lower" placeholder="70"
+                                                        value={{input.weight_lower}}></span>
+                                        To
+                                        <span class="rangeBox"><input class="textBox" type="number" step="0.01"
+                                                        name="weight_upper" placeholder="100"
+                                                        value={{input.weight_upper}}></span>
+                                        Kg
+                                        {{/ifChecked}}
+                                </div>
+                        </div>
+                        <div class="chooseRange">
+                                <!--if already required, need to show a checked box-->
+                                {{#ifChecked patient.required_data.exercise}}
+                                <input class="chooseBox" type="checkbox" name="exercise_check" checked="checked">
+                                {{else}}
+                                <input class="chooseBox" type="checkbox" name="exercise_check">
+                                {{/ifChecked}}
+                                <span class="category">Exercise</span>
+                                <div class="textLine">
+                                        {{#ifChecked patient.required_data.exercise}}
+                                        From
+                                        <span class="rangeBox"><input class="textBox" type="number" step="1"
+                                                        name="exercise_lower" placeholder="1000"
+                                                        value={{patient.bound.exercise_lower}}></span>
+                                        To
+                                        <span class="rangeBox"><input class="textBox" type="number" step="1"
+                                                        name="exercise_upper" placeholder="4000"
+                                                        value={{patient.bound.exercise_upper}}></span>
+                                        steps
+                                        {{else}}
+                                        From
+                                        <span class="rangeBox"><input class="textBox" type="number" step="1"
+                                                        name="exercise_lower" placeholder="1000"
+                                                        value={{input.exercise_lower}}></span>
+                                        To
+                                        <span class="rangeBox"><input class="textBox" type="number" step="1"
+                                                        name="exercise_upper" placeholder="4000"
+                                                        value={{input.exercise_upper}}></span>
+                                        steps
+                                        {{/ifChecked}}
+                                </div>
+                        </div>
+                        <div class="chooseRange">
+                                <!--if already required, need to show a checked box-->
+                                {{#ifChecked patient.required_data.insulin}}
+                                <input class="chooseBox" type="checkbox" name="insulin_check" checked="checked">
+                                {{else}}
+                                <input class="chooseBox" type="checkbox" name="insulin_check">
+                                {{/ifChecked}}
+                                <span class="category">Doses of Insulin Taken</span>
+                                <div class="textLine">
+                                        {{#ifChecked patient.required_data.insulin}}
+                                        From
+                                        <span class="rangeBox"><input class="textBox" type="number" step="1"
+                                                        name="insulin_lower" placeholder="1"
+                                                        value={{patient.bound.insulin_lower}}></span>
+                                        To
+                                        <span class="rangeBox"><input class="textBox" type="number" step="1"
+                                                        name="insulin_upper" placeholder="3"
+                                                        value={{patient.bound.insulin_upper}}></span>
+                                        Doses
+                                        {{else}}
+                                        From
+                                        <span class="rangeBox"><input class="textBox" type="number" step="1"
+                                                        name="insulin_lower" placeholder="1"
+                                                        value={{input.insulin_lower}}></span>
+                                        To
+                                        <span class="rangeBox"><input class="textBox" type="number" step="1"
+                                                        name="insulin_upper" placeholder="3"
+                                                        value={{input.insulin_upper}}></span>
+                                        Doses
+                                        {{/ifChecked}}
+                                </div>
+                        </div>
+                        <div class="chooseRange">
+                                <!--if already required, need to show a checked box-->
+                                {{#ifChecked patient.required_data.glucose}}
+                                <input class="chooseBox" type="checkbox" name="glucose_check" checked="checked">
+                                {{else}}
+                                <input class="chooseBox" type="checkbox" name="glucose_check">
+                                {{/ifChecked}}
+                                <span class="category">Blood Glucose Level</span>
+                                <div class="textLine">
+                                        {{#ifChecked patient.required_data.glucose}}
+                                        From
+                                        <span class="rangeBox"><input class="textBox" type="number" step="0.01"
+                                                        name="glucose_lower" placeholder="3.9"
+                                                        value={{patient.bound.glucose_lower}}></span>
+                                        To
+                                        <span class="rangeBox"><input class="textBox" type="number" step="0.01"
+                                                        name="glucose_upper" placeholder="6.1"
+                                                        value={{patient.bound.glucose_upper}}></span>
+                                        nmol/L
+                                        {{else}}
+                                        From
+                                        <span class="rangeBox"><input class="textBox" type="number" step="0.01"
+                                                        name="glucose_lower" placeholder="3.9"
+                                                        value={{input.glucose_lower}}></span>
+                                        To
+                                        <span class="rangeBox"><input class="textBox" type="number" step="0.01"
+                                                        name="glucose_upper" placeholder="6.1"
+                                                        value={{input.glucose_upper}}></span>
+                                        nmol/L
+                                        {{/ifChecked}}
+                                </div>
+                        </div>
+                </div>
+                <div class="submit">
+                        <button class="saveButton" onclick="window.location.href=''" type="submit">Save</button>
+                </div>
+                <div class="error">
+                        <p class="errormsg">{{error}}</p>
+                </div>
+        </div>
+</form>

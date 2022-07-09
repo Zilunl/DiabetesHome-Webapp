@@ -1,0 +1,249 @@
+{{!--render supporting Message from clinician--}}
+<div class="SupportMessage">
+    {{#ifMSG patient.support_message}}
+            <p>{{patient.support_message}}</p>
+    {{else}}
+        <p>Welcome to Diabetes@Home</p>
+    {{/ifMSG}}
+    <p>——&nbsp;Doctor {{clinician.last_name}}</p>
+</div>
+<p class="homeSubtitle">My Plans</p>
+<div class="homeTop">
+    {{!-- render todat's blood glucose --}}
+    {{#ifHasDate today.data.glucose.date}}
+    <div class="addbutton">
+        <img class="recorded" src="/blood_glucose.png" alt="Blood Glucose">
+        <p>Blood Glucose: <br>{{today.data.glucose.value}}&nbsp;nmol/L</p>
+        <p class="time">{{today.data.glucose.date}}</p>
+    </div>
+    {{else}}
+    {{#ifTrue patient.required_data.glucose}}
+    <div class="addbutton">
+        <a href='/patient/addData/glucose'>
+            <img class="add" src="/addbutton.png" alt="Blood Glucose"></a>
+        <span>Blood Glucose<img class="iconpng" src="/blood_glucose.png" alt="bloodpng"></span>
+    </div>
+    {{else}}
+    {{/ifTrue}}
+    {{/ifHasDate}}
+
+    {{!-- Render today's weight--}}
+    {{#ifHasDate today.data.weight.date}}
+    <div class="addbutton">
+        <img class="recorded" src="/weightscale.png" alt="Weight">
+        <p>Weight: <br>{{today.data.weight.value}}&nbsp;Kg</p>
+        <p class="time">{{today.data.weight.date}}</p>
+    </div>
+    {{else}}
+    {{#ifTrue patient.required_data.weight}}
+    <div class="addbutton">
+        <a href='/patient/addData/weight'>
+            <img class="add" src="/addbutton.png" alt="Weight"></a>
+        <span>Weight&nbsp;<img class="iconpng" src="/weightscale.png" alt="weightpng"></span>
+    </div>
+    {{else}}
+    {{/ifTrue}}
+    {{/ifHasDate}}
+
+    {{!-- Render today's exercise--}}
+    {{#ifHasDate today.data.exercise.date}}
+    <div class="addbutton">
+        <img class="recorded-exercise" src="/recordedRunning.png" alt="Exercise">
+        <p>Exercise: <br>{{today.data.exercise.value}}&nbsp;Steps</p>
+        <p class="time">{{today.data.exercise.date}}</p>
+    </div>
+    {{else}}
+    {{#ifTrue patient.required_data.exercise}}
+    <div class="addbutton">
+        <a href='/patient/addData/exercise'>
+            <img class="add" src="/addbutton.png" alt="Exercise"></a>
+        <span>Exercise&nbsp;<img class="iconpng" src="/recordedRunning.png" alt="exercisepng"></span>
+    </div>
+    {{else}}
+    {{/ifTrue}}
+    {{/ifHasDate}}
+
+    {{!-- Render today's insulin--}}
+    {{#ifHasDate today.data.insulin.date}}
+    <div class="addbutton">
+        <img class="recorded" src="/doses.png" alt="Weight">
+        <p>Dose of Insulin Taken: <br>{{today.data.insulin.value}}&nbsp;Doses</p>
+        <p class="time">{{today.data.insulin.date}}</p>
+    </div>
+    {{else}}
+    {{#ifTrue patient.required_data.insulin}}
+    <div class="addbutton">
+        <a href='/patient/addData/insulin'>
+            <img class="add" src="/addbutton.png" alt="Insulin"></a>
+        <span>Insulin&nbsp;<img class="iconpng" src="/doses.png" alt="insulpng"></span>
+    </div>
+    {{else}}
+    {{/ifTrue}}
+    {{/ifHasDate}}
+</div>
+{{!--Render the table for recent 7 days record.--}}
+<div class="tableTop">
+    <span><img src="/redcircle.png">Above normal range</span>
+    <span><img src="/greycircle.png">Below normal range</span>
+    <span><img src="/unrecorded.png">Data was not recorded</span>
+</div>
+<div class="homeTable">
+    <table>
+        <tr>
+            <th></th>
+            {{#each recent7}}
+            <th>{{this.date}}</th>
+            {{/each}}
+        </tr>
+        <tr>
+            <td>Blood Glucose</td>
+            {{#each recent7}}
+            {{#ifNull this.record.data.glucose}}
+            <td><img src="/unrecorded.png"></td>
+            {{else}}
+            {{#ifRecorded this.record.data.glucose.status}}
+            <td style="background-color:
+                            {{#ifAboveRange this.record.data.glucose.value ../patient.bound.glucose_upper}}
+                                #F29393
+                            {{/ifAboveRange}}
+                            {{#ifBelowRange this.record.data.glucose.value ../patient.bound.glucose_lower}}
+                                #AAA9A9
+                            {{/ifBelowRange}}
+                        ;">{{this.record.data.glucose.value}}</td>
+            {{else}}
+            {{#ifNotRequired this.record.data.glucose.status}}
+            <td>
+                <div class="ind_slope"></div>
+            </td>
+            {{else}}
+            <td><img src="/unrecorded.png"></td>
+            {{/ifNotRequired}}
+            {{/ifRecorded}}
+            {{/ifNull}}
+            {{/each}}
+            </td>
+        </tr>
+
+        <tr>
+            <td>Weight</td>
+            {{#each recent7}}
+            {{#ifNull this.record.data.weight}}
+            <td><img src="/unrecorded.png"></td>
+            {{else}}
+            {{#ifRecorded this.record.data.weight.status}}
+            <td style="background-color:
+                            {{#ifAboveRange this.record.data.weight.value ../patient.bound.weight_upper}}
+                                #F29393
+                            {{/ifAboveRange}}
+                            {{#ifBelowRange this.record.data.weight.value ../patient.bound.weight_lower}}
+                                #AAA9A9
+                            {{/ifBelowRange}}
+                        ;">{{this.record.data.weight.value}}</td>
+            {{else}}
+            {{#ifNotRequired this.record.data.weight.status}}
+            <td>
+                <div class="ind_slope"></div>
+            </td>
+            {{else}}
+            <td><img src="/unrecorded.png"></td>
+            {{/ifNotRequired}}
+            {{/ifRecorded}}
+            {{/ifNull}}
+            {{/each}}
+            </td>
+        </tr>
+
+        <tr>
+            <td>Exercise</td>
+            {{#each recent7}}
+            {{#ifNull this.record.data.exercise}}
+            <td><img src="/unrecorded.png"></td>
+            {{else}}
+            {{#ifRecorded this.record.data.exercise.status}}
+            <td style="background-color:
+                            {{#ifAboveRange this.record.data.exercise.value ../patient.bound.exercise_upper}}
+                                #F29393
+                            {{/ifAboveRange}}
+                            {{#ifBelowRange this.record.data.exercise.value ../patient.bound.exercise_lower}}
+                                #AAA9A9
+                            {{/ifBelowRange}}
+                        ;">{{this.record.data.exercise.value}}</td>
+            {{else}}
+            {{#ifNotRequired this.record.data.exercise.status}}
+            <td>
+                <div class="ind_slope"></div>
+            </td>
+            {{else}}
+            <td><img src="/unrecorded.png"></td>
+            {{/ifNotRequired}}
+            {{/ifRecorded}}
+            {{/ifNull}}
+            {{/each}}
+            </td>
+        </tr>
+
+        <tr>
+            <td>Doses of Insulin</td>
+            {{#each recent7}}
+            {{#ifNull this.record.data.insulin}}
+            <td><img src="/unrecorded.png"></td>
+            {{else}}
+            {{#ifRecorded this.record.data.insulin.status}}
+            <td style="background-color:
+                            {{#ifAboveRange this.record.data.insulin.value ../patient.bound.insulin_upper}}
+                                #F29393
+                            {{/ifAboveRange}}
+                            {{#ifBelowRange this.record.data.insulin.value ../patient.bound.insulin_lower}}
+                                #AAA9A9
+                            {{/ifBelowRange}}
+                        ;">{{this.record.data.insulin.value}}</td>
+            {{else}}
+            {{#ifNotRequired this.record.data.insulin.status}}
+            <td>
+                <div class="ind_slope"></div>
+            </td>
+            {{else}}
+            <td><img src="/unrecorded.png"></td>
+            {{/ifNotRequired}}
+            {{/ifRecorded}}
+            {{/ifNull}}
+            {{/each}}
+            </td>
+        </tr>
+    </table>
+</div>
+<div class="homepage-footer">
+    <p><a href="/patient/moredata">View More Data&nbsp;</a>></p>
+</div>
+
+<figure class="highcharts-figure">
+    <p class="highcharts-description">Blood Glucose Graph</p>
+    <div id="glucose_container"></div>
+</figure>
+<figure class="highcharts-figure">
+    <p class="highcharts-description">Weight Graph</p>
+    <div id="weight_container"></div>
+</figure>
+<figure class="highcharts-figure">
+    <p class="highcharts-description">Exercise Graph</p>
+    <div id="exercise_container"></div>
+</figure>
+<figure class="highcharts-figure">
+    <p class="highcharts-description">Insulin Graph</p>
+    <div id="insulin_container"></div>
+</figure>
+
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/series-label.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+<script src="/js/hbshelp.js"></script>
+
+<script>
+    isDarkmode({{ patient.darkmode }})
+</script>
+
+<script>showChart({{{ dataList }}}, {{{ dateList }}})</script>

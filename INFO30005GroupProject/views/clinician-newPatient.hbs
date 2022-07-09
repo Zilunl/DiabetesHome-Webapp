@@ -1,0 +1,120 @@
+<h1>New Patient</h1>
+<div class="error">
+    <p class="errormsg">{{error}}</p>
+</div>
+<form action="/clinician/newPatient" method="post">
+    <div class="newPatient-body">
+        <div class="infoList">
+            <div class="infoAdd">
+                <span class="infoName">First Name: </span>
+                <span class="inputBox"><input class="textBox" id="familyName" required="required" type="text"
+                        name="first_name" placeholder="xxx" pattern="[a-zA-Z]+" value="{{input.last_name}}"
+                        title="only could include letters"></span>
+
+            </div>
+            <div class="infoAdd">
+                <span class="infoName">Last Name:</span>
+                <span class="inputBox"><input class="textBox" id="givenName" required="required" type="text"
+                        name="last_name" placeholder="xxx" pattern="^[^\s]*$" value="{{input.first_name}}"
+                        title="only could include letters"></span>
+            </div>
+            <div class="infoAdd">
+                <span class="infoName">Email Address:</span>
+                <span class="inputBox"><input class="textBox" id="email" required="required" type="email" name="email"
+                        pattern="[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="must be a valid email address"
+                        placeholder="123@xxx.com" value="{{input.email}}"></span>
+            </div>
+            <div class="infoAdd">
+                <span class="infoName">Password:</span>
+                <span class="inputBox"><input class="textBox" id="password" required="required" type="password"
+                        name="password" pattern="^[^\s]*$" onblur="clicktest()" title="can not have space"
+                        placeholder="at least 8 characters"></span>
+            </div>
+            <div class="infoAdd">
+                <span class="infoName">Confirm Password:</span>
+                <span class="inputBox"><input class="textBox" id="confirmPassword" required="required" type="password"
+                        name="confirm_password" onblur="clicktest()" placeholder="confirm the password"></span>
+            </div>
+            <span id="msg"></span>
+            <div class="infoAdd">
+                <span class="infoName">Height(m):</span>
+                <span class="inputBox"><input class="textBox" id="height" required="required" type="number" step=0.01
+                        name="height" min=0.1 max=3 placeholder="enter the height in  meters"
+                        value="{{input.height}}"></span>
+            </div>
+            <div class="infoAdd">
+                <span class="infoName">Year of Birth:</span>
+                <span class="inputBox"><input class="textBox" id="birth" required="required" type="number"
+                        name="yearofbirth" min=1922 max=2022 placeholder="enter the integer"
+                        value="{{input.yearofbirth}}"></span>
+            </div>
+            <div class="infoAdd">
+                <span class="infoName">A brief Text Bio:</span>
+                <span class="inputBox">
+                    <textarea id="briefBio" class="textBox" type="text" name="brief_bio"
+                        placeholder="enter the characters" value="{{input.brief_bio}}"></textarea>
+            </div>
+        </div>
+
+        <div class="chooseList">
+            <div class="chooseRange">
+                <input class="chooseBox" type="checkbox" name="weight_check">
+                <span class="category">Weight</span>
+                <div class="textLine">
+                    From
+                    <span class="rangeBox"><input class="textBox" type="number" step="0.01" name="weight_lower"
+                            placeholder="70" value="{{input.weight_lower}}"></span>
+                    To
+                    <span class="rangeBox"><input class="textBox" type="number" step="0.01" name="weight_upper"
+                            placeholder="100" value="{{input.weight_upper}}"></span>
+                    Kg
+                </div>
+            </div>
+            <div class="chooseRange">
+                <input class="chooseBox" type="checkbox" name="exercise_check">
+                <span class="category">Exercise</span>
+                <div class="textLine">
+                    From
+                    <span class="rangeBox"><input class="textBox" type="number" step="1" name="exercise_lower"
+                            placeholder="1000" value="{{input.exercise_lower}}"></span>
+                    To
+                    <span class="rangeBox"><input class="textBox" type="number" step="1" name="exercise_upper"
+                            placeholder="4000" value="{{input.exercise_upper}}"></span>
+                    steps
+                </div>
+            </div>
+            <div class="chooseRange">
+                <input class="chooseBox" type="checkbox" name="insulin_check">
+                <span class="category">Doses of Insulin Taken</span>
+                <div class="textLine">
+                    From
+                    <span class="rangeBox"><input class="textBox" type="number" step="1" name="insulin_lower"
+                            placeholder="1" value={{input.insulin_lower}}></span>
+                    To
+                    <span class="rangeBox"><input class="textBox" type="number" step="1" name="insulin_upper"
+                            placeholder="3" value={{input.insulin_upper}}></span>
+                    Doses
+                </div>
+            </div>
+            <div class="chooseRange">
+                <input class="chooseBox" type="checkbox" name="glucose_check">
+                <span class="category">Blood Glucose Level</span>
+                <div class="textLine">
+                    From
+                    <span class="rangeBox"><input class="textBox" type="number" step="0.01" name="glucose_lower"
+                            placeholder="3.9" value={{input.glucose_lower}}></span>
+                    To
+                    <span class="rangeBox"><input class="textBox" type="number" step="0.01" name="glucose_upper"
+                            placeholder="6.1" value={{input.glucose_upper}}></span>
+                    nmol/L
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="submit">
+        <button class="saveButton" id="saveButton" name="popBox" type="submit"
+            onclick="isNewPatientNull()">Save</button>
+    </div>
+</form>
+<script src="/js/hbshelp.js"></script>
