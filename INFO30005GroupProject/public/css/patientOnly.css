@@ -1,0 +1,1462 @@
+* {
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0%;
+}
+
+html {
+    font-size: 16px;
+}
+
+main {
+    margin-bottom: 5%;
+}
+
+/* Patient Header */
+.patient-header {
+    height: 55px;
+    width: 100%;
+    background-color: #668cbb;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 45px;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    color: #FFFFFF;
+    font-size: 20px;
+}
+
+.patient-header div {
+    display: flex;
+    align-items: center;
+    width: 76px;
+}
+
+.patient-header div:first-child {
+    padding-left: 2.67%;
+}
+
+.patient-header div:nth-child(3) {
+    padding-right: 2.67%;
+    justify-content: end;
+}
+
+.patient-header div:last-child {
+    display: none;
+}
+
+.patient-logo {
+    width: 76px;
+}
+
+.smallScreen {
+    display: inline;
+}
+
+.bigScreen {
+    display: none;
+}
+
+.patient-mobile-aboutMe {
+    width: 29px;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+.nav-links a,
+.menu button {
+    color: #FFFFFF;
+}
+
+.ind_slope {
+    border-bottom: 1px solid #CFCFCF;
+    transform: rotate(45deg);
+}
+
+.large_slope {
+    border-bottom: 1px solid #CFCFCF;
+    transform: rotate(24deg);
+}
+
+.menu {
+    display: none;
+    position: absolute;
+    background-color: #668cbb;
+    right: 0;
+    left: 0;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 18px;
+    margin-top: 344px;
+}
+
+.menu button {
+    border: none;
+    background-color: #668CB8;
+    font-size: 18px;
+}
+
+input[type=checkbox]:checked~.menu {
+    display: block;
+}
+
+.hamburger {
+    display: block;
+}
+
+input[type=checkbox] {
+    display: none;
+}
+
+/* Patient Homepage */
+.SupportMessage {
+    background-color: #BBD9F6;
+    border-radius: 0.875rem;
+    margin: 5.0625rem 10.13% 2.625rem 10.13%;
+    height: 4.375rem;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.SupportMessage p:nth-child(2) {
+    font-size: 0.75rem;
+}
+
+.homeSubtitle {
+    margin: auto auto 0.3125rem 10.13%;
+}
+
+.homeTop {
+    width: 79.74%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-flow: wrap;
+}
+
+.addbutton {
+    width: 42.86%;
+    height: 7.3125rem;
+    border: 1px solid #CFCFCF;
+    border-radius: 1.125rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.75rem;
+    position: relative;
+    color: #668CB8;
+    text-align: center;
+    margin-bottom: 1.875rem;
+}
+
+.addbutton a {
+    width: 100%;
+}
+
+.addbutton span {
+    margin-top: 0.5625rem;
+    display: flex;
+    align-items: center;
+}
+
+.addbutton p {
+    font-size: 0.75rem;
+}
+
+.iconpng {
+    height: 1.2rem;
+}
+
+.recorded {
+    width: 4rem;
+}
+
+.recorded-exercise {
+    height: 4rem;
+}
+
+.time {
+    margin-top: 5px;
+}
+
+.tableTop {
+    display: flex;
+    flex-direction: column;
+    margin: auto auto 0.1875rem 7%;
+    font-size: 0.5625rem;
+}
+
+.tableTop span {
+    display: flex;
+    align-items: center;
+    padding: 0.1875rem;
+}
+
+.tableTop img {
+    width: 0.5625rem;
+    margin: auto 0.125rem;
+}
+
+.homeTable table {
+    margin: 0 auto;
+    width: 85.07%;
+    border-collapse: collapse;
+}
+
+.homeTable th,td {
+    border: 1px solid #CFCFCF;
+    font-size: 0.6875rem;
+    text-align: center;
+}
+
+td img {
+    width: 1.4rem;
+    vertical-align: middle;
+}
+
+.slope {
+    border-bottom: 1px solid #CFCFCF;
+    transform: rotate(18deg);
+}
+
+.homeTable td:nth-child(1) {
+    width: 4.6875rem;
+    height: 2.5rem;
+}
+
+.homeTable th {
+    height: 1.8125rem;
+}
+
+.viewData {
+    text-align: center;
+    margin: 0.375rem;
+    font-size: 0.6875rem;
+}
+
+.homepage-footer {
+    padding-top: 1%;
+    text-align: center;
+}
+
+.homepage-footer a {
+    text-decoration: underline;
+}
+
+
+/* Add Data Page */
+h1 {
+    margin: 5.0625rem auto 1.5625rem auto;
+    text-align: center;
+    font-size: 1.125rem;
+    font-weight: 100;
+}
+
+.normalRange {
+    width: 81.33%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: end;
+    font-size: 0.75rem;
+}
+
+.dataInput {
+    width: 81.33%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 20.25rem;
+    position: relative;
+}
+
+.dataInput span {
+    position: absolute;
+    left: 68%;
+    top: 16.5%;
+}
+
+.dataInput input {
+    border-radius: 0.625rem;
+    border: 1px solid #EDEDED;
+    box-shadow: 3px 3px #EDEDED;
+}
+
+#addData {
+    height: 31.21%;
+    text-align: center;
+    font-size: 2.75rem;
+}
+
+#addComment {
+    height: 55.77%;
+    padding: 0.625rem 0 0 0.625rem;
+    font-size: 0.75rem;
+}
+
+#addData::-webkit-input-placeholder {
+    font-size: 2.75rem;
+}
+
+.saveButton {
+    display: block;
+    margin: 1.5rem auto;
+    width: 4.4375rem;
+    height: 1.8125rem;
+    border-radius: 0.5rem;
+    border: none;
+    color: white;
+    background-color: #668CB8;
+    font-size: 1rem;
+}
+
+
+/* Daily Detail Data Page */
+.dataDatail {
+    width: 81.33%;
+    margin: 0 auto 3.125rem auto;
+}
+
+.dataBox {
+    border: 1px solid #EDEDED;
+    box-shadow: 3px 3px #EDEDED;
+    border-radius: 0.625rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 12rem;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+.dataDatail p {
+    margin: 0 auto 3px auto;
+}
+
+.dataType {
+    font-weight: bold;
+}
+
+.dataNumber {
+    font-size: 2.75rem;
+}
+
+.dataNumber span {
+    font-size: 1rem;
+}
+
+
+/* Data Page */
+
+.data-top {
+    width: 80%;
+    margin: auto;
+}
+
+.data-top .tableTop {
+    margin: 0;
+    font-size: 0.625rem;
+    float: left;
+}
+
+.data-top .tableTop img {
+    width: 1.063rem;
+    margin-right: 0.438rem;
+}
+
+.data-top .tableTop span {
+    padding: 0.188rem;
+    padding-left: 0;
+}
+
+.topright {
+    height: 1.75rem;
+    float: right;
+    margin-top: 2.35rem;
+}
+
+.topright form {
+    height: 100%;
+}
+
+select {
+    background-color: #668CB8;
+    border: 1px solid #707070;
+    color: white;
+    font-size: 0.75rem;
+    width: 3.5rem;
+    height: 100%;
+}
+
+select a:hover {
+    width: 3.5rem;
+}
+
+.individual-table {
+    width: 80%;
+    margin: auto;
+    font-size: 0.625rem;
+    font-style: none;
+}
+
+.data-table {
+    width: 100%;
+}
+
+.data-table a {
+    text-decoration: underline;
+}
+
+table, th, td {
+    border: 1px solid #CFCFCF;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.individual-table tr {
+    height: 2.25rem;
+}
+
+.individual-table td {
+    height: 1.75rem;
+}
+
+.individual-table th {
+    background-color: #BBD9F6;
+    height: 2.25rem;
+    font-size: 0.625rem;
+    font-weight: normal;
+}
+
+.individual-table .leftone {
+    width: 10.45%;
+    padding: 0;
+}
+
+.data-table .slope {
+    display: none;
+}
+
+.data-table .ind_slope {
+    transform: rotate(35deg);
+}
+
+.table-weight, .table-exercise {
+    width: 15%;
+}
+
+
+/* Motivation Page */
+.motiContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.selfRank {
+    border: 1px solid #CFCFCF;
+    box-shadow: 3px 3px #EDEDED;
+    border-radius: 0.5rem;
+    margin: 0 auto;
+    width: 37.07%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rank {
+    font-weight: bold;
+    padding: 0.3125rem;
+}
+
+.motiPhoto {
+    width: 3.9375rem;
+}
+
+.badge {
+    width: 3.75rem;
+    padding: 0.75rem;
+}
+
+.badgeInfo {
+    position: absolute;
+    width: 0.75rem;
+    top: 32%;
+    left: 58%;
+}
+
+.badgeAlert {
+    display: contents;
+}
+
+.leaderboard {
+    margin-top: 1.25rem;
+}
+
+.ranking {
+    font-size: 1.375rem;
+    color: #668CB8;
+    margin-top: -6px;
+}
+
+.firstLine {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.crown {
+    width: 1.75rem;
+}
+
+.numberOne {
+    width: 3.9375rem;
+}
+
+.secondLine {
+    display: flex;
+    width: 54.93%;
+    margin: 0 auto;
+    justify-content: space-between;
+    margin-top: -12px;
+}
+
+.lineTwo_pic {
+    width: 3.0625rem;
+}
+
+.thirdLine {
+    width: 44.27%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.board {
+    width: 73.33%;
+    margin: 1.25rem auto;
+}
+
+.boardLine {
+    display: flex;
+    align-items: center;
+    border: 1px solid #CFCFCF;
+    border-radius: 0.5rem;
+    height: 2.6875rem;
+    margin-bottom: -1px;
+}
+
+.boardPic {
+    width: 2.125rem;
+}
+
+.boardRank {
+    padding: 0.5rem;
+    font-size: 1.25rem;
+    color: #668CB8;
+}
+
+.lineRight {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    padding-left: 1rem;
+}
+
+
+/* About Me Page */
+.mood {
+    position: absolute;
+    right: 41%;
+    bottom: 39.5%;
+}
+
+body.dark,
+.edit-page.dark {
+    background: #292C35;
+    color: white;
+}
+
+.checkbox {
+    opacity: 0;
+    position: absolute;
+}
+
+.mood-change {
+    background-color: #668CB8;
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    position: relative;
+    height: 15px;
+    width: 60px;
+    transform: scale(1.5);
+}
+
+.mood-change .ball {
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    left: 1px;
+    height: 23px;
+    width: 23px;
+    transform: translateX(0px);
+    transition: transform 0.2s linear;
+}
+
+.checkbox:checked+.mood-change .ball {
+    transform: translateX(45px);
+}
+
+.moon,.sun {
+    height: 18px;
+}
+
+.edit-page {
+    display: none;
+    width: 100%;
+    position: absolute;
+}
+
+input[type=checkbox]:checked~.edit-page {
+    display: block;
+}
+
+input[type=checkbox]:checked~.aboutme-text {
+    display: none;
+}
+
+.aboutme-delete {
+    width: 1.5rem;
+    margin-right: 1.625rem;
+    float: right;
+}
+
+.edit-button {
+    width: 1rem;
+    float: right;
+    margin-right: 2.125rem;
+}
+
+.aboutme-body, .edit-body {
+    width: 74.66%;
+    margin: 0 auto;
+}
+
+.user-info {
+    height: 1.438rem;
+    margin-bottom: 0.375rem;
+}
+
+.edit-body input, .user-bio textarea {
+    border: 1px solid #707070;
+    border-radius: 0.625rem;
+}
+
+.edit-body ::placeholder {
+    padding-left: 0.2rem;
+}
+
+.user-bio {
+    height: 9.125rem;
+    margin-top: 1.5rem;
+}
+
+.user-bio label {
+    margin-bottom: 0.375rem;
+}
+
+.user-bio textarea {
+    width: 98%;
+    height: 7.375rem;
+    padding: 0.5rem 0 0 0.5rem;
+    font-size: 1rem;
+}
+
+.user-bio ::placeholder {
+    width: 80%;
+    height: 80%;
+}
+
+.edit-body p {
+    font-size: 0.75rem;
+    text-align: center;
+    font-style: italic;
+}
+
+.edit-page .saveButton {
+    margin: 0.875rem auto 5rem auto;
+}
+
+.detail-change {
+    margin-top: 0.75rem;
+}
+
+.detail-change label {
+    float: left;
+    width: 40%;
+}
+
+.user-info input, .user-info .short {
+    float: right;
+    width: 50.71%;
+}
+
+.about-detail {
+    text-align: center;
+}
+
+.userphoto {
+    width: 43%;
+    margin: 0 auto;
+    display: block;
+}
+
+.about-detail {
+    padding: 0;
+}
+
+.about-detail li {
+    padding-bottom: 0.625rem;
+}
+
+.about-detail li a {
+    text-decoration: underline;
+    color: inherit;
+}
+
+.text-bio {
+    margin-top: 3.188rem;
+}
+
+.user-bio {
+    margin-top: 5rem;
+}
+
+.bio-detail {
+    margin-top: 0.625rem;
+    height: 7.375rem;
+    border: 1px solid #EDEDED;
+    border-radius: 0.5rem;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.24);
+    padding: 0.5rem;
+}
+
+.bio-detail li {
+    list-style-type: disc;
+    padding: 0.375rem 0 0 0.4rem;
+}
+
+.edit-page button {
+    width: 18.93%;
+    margin: 0.875rem auto;
+}
+
+@media screen and (min-width: 800px) and (max-width: 1400px) {
+    html {
+        font-size: 22px;
+    }
+
+    /* Patient Header iPad*/
+    .patient-header {
+        height: 80px;
+    }
+
+    .patient-mobile-aboutMe {
+        width: 40px;
+    }
+
+    .patient-logo {
+        width: 98px;
+    }
+
+    .hamburger {
+        font-size: 34px;
+    }
+
+
+    /* Menu List iPad*/
+    .menu {
+        margin-top: 370px;
+    }
+
+
+    /* Patient Homepage iPad */
+    .homeTop {
+        width: 52.5%;
+    }
+
+    .homeMiddle {
+        width: 52.5%;
+    }
+
+
+    /* Add Data Page iPad */
+    .normalRange {
+        width: 68.33%;
+    }
+
+    .dataInput {
+        width: 68.33%;
+    }
+
+    .dataInput span {
+        left: 62%;
+    }
+
+    .ind_slope {
+        transform: rotate(28deg);
+    }
+
+
+    /* Daily Detail Data Page iPad */
+    .dataDatail {
+        width: 61.33%;
+    }
+
+
+    /* Motivation iPad */
+    .badgeInfo {
+        top: 47%;
+        left: 55%;
+    }
+
+    .leaderboard {
+        margin-top: 2.25rem;
+    }
+
+    .thirdLine {
+        width: 50.27%;
+    }
+
+    .boardRank {
+        padding: 1.5rem;
+    }
+
+    
+    /* more data page iPad */
+
+    .data-top .tableTop {
+        font-size: 0.8rem;
+    }
+
+    .data-table .slope {
+        transform: rotate(30deg);
+    }
+
+    .data-table .ind_slope {
+        transform: rotate(15deg);
+    }
+
+    .large_slope {
+        border-bottom: 1px solid #CFCFCF;
+        transform: rotate(12deg);
+    }
+
+    .individual-table th {
+        font-size: 0.8rem;
+    }
+
+    .individual-table td {
+        font-size: 0.8rem;
+    }
+
+    .table-weight, .table-exercise {
+        width: 18%;
+    }
+
+
+    /* About Me Page iPad */
+    .mood {
+        right: 47%;
+        bottom: 14.5%;
+    }
+
+    .edit-body img, .userphoto {
+        width: 23%;
+    }
+
+    .user-info input, .user-info li {
+        height: 80%;
+        font-size: 0.8rem;
+    }
+
+    .user-info li {
+        float: right;
+        width: 50.71%;
+    }
+
+    .user-bio input {
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+
+    /* Patient Header Web */
+    .patient-mobile-aboutMe {
+        display: none;
+    }
+
+    .patient-header {
+        height: 8.75rem;
+        padding: 0 2%;
+        justify-content: flex-start;
+    }
+
+    .patient-header div:first-child {
+        width: 0px;
+        padding-left: 0.5%;
+    }
+
+    .patient-header div:last-child {
+        display: block;
+        padding-left: 74%;
+    }
+
+    .patient-logo {
+        height: 7.4375rem;
+        width: 11.6875rem;
+    }
+
+    .smallScreen {
+        display: none;
+    }
+
+    .bigScreen {
+        display: inline;
+    }
+
+    .patient-web-navBar a {
+        font-size: 30px;
+    }
+
+    .patient-web-logOut {
+        display: block;
+        color: #668CB8;
+        background-color: #FFFFFF;
+        box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.24);
+        border-radius: 1.25rem;
+        width: 13.1875rem;
+        height: 4.375rem;
+        border: none;
+        font-size: 1.875rem;
+        justify-content: end;
+    }
+
+    .hamburger {
+        display: none;
+        user-select: none;
+    }
+
+    .menu {
+        display: flex;
+        left: 13%;
+        right: 18%;
+        justify-content: space-between;
+        margin-top: 0px;
+        font-size: 30px;
+        padding: 5px 16px;
+    }
+
+    .menu li:hover {
+        display: inline-block;
+        background-color: #87b7f2;
+        border-radius: 5px;
+        transition: 0.3s ease;
+    }
+
+    /* Patient Homepage Web */
+    .SupportMessage {
+        margin: 14rem 29.01% 4.8125rem 29.01%;
+        height: 7.8125rem;
+    }
+
+    .SupportMessage p:first-child {
+        font-size: 1.875rem;
+    }
+
+    .SupportMessage p:nth-child(2) {
+        font-size: 1.375rem;
+    }
+
+    .homeSubtitle {
+        margin-left: 23.85%;
+        font-size: 1.875rem;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+
+    .homeTop {
+        width: 33.65%;
+        margin: 0.25rem auto 0 auto;
+    }
+
+    .addbutton {
+        height: 17.3047rem;
+        font-size: 1.625rem;
+        margin-bottom: 3.75rem;
+    }
+
+    .addbutton span {
+        margin-top: 1.5rem;
+    }
+
+    .add {
+        width: 60.43%;
+    }
+
+    .iconpng {
+        height: 1.875rem;
+    }
+
+    .homeMiddle {
+        width: 33.65%;
+        height: 18.8125rem;
+        margin: 0.25rem auto 4.875rem auto;
+    }
+
+    .recorded {
+        width: 9rem;
+    }
+
+    .recorded-exercise {
+        height: 9rem;
+    }
+
+    .addbutton p {
+        font-size: 1.625rem;
+    }
+
+    .time {
+        margin-top: 11.7px;
+    }
+
+    .tableTop {
+        margin: auto auto 0.9375rem 21%;
+        font-size: 1.25rem;
+    }
+
+    .tableTop span {
+        padding: 0.3125rem;
+    }
+
+    .tableTop img {
+        width: 2.3125rem;
+        margin: auto 0.125rem;
+    }
+
+    .homeTable table {
+        margin: 0 21.3% 0 21.3%;
+        width: 60.14%;
+    }
+
+    td img {
+        width: 3rem;
+        vertical-align: middle;
+    }
+
+    .homeTable th, td, tr {
+        font-size: 1.625rem;
+    }
+
+    .slope {
+        transform: rotate(32deg);
+    }
+
+    .homeTable td:nth-child(1), .homeTable th {
+        width: 16.5rem;
+        height: 6.625rem;
+    }
+
+    .viewData {
+        margin: 1.5rem;
+        font-size: 1.625rem;
+    }
+
+
+    /* Add Data Page Web */
+    h1 {
+        margin: 13.75rem auto 3.9375rem auto;
+        font-size: 2.375rem;
+    }
+
+    .normalRange {
+        width: 47.4%;
+        font-size: 1.625rem;
+    }
+
+    .dataInput {
+        width: 47.4%;
+        height: 33.625rem;
+    }
+
+    .dataInput span {
+        top: 17.5%;
+        left: 62%;
+        font-size: 1.625rem;
+    }
+
+    #addData {
+        font-size: 5.625rem;
+    }
+
+    #addData::-webkit-input-placeholder {
+        font-size: 5.625rem;
+    }
+
+    #addComment {
+        font-size: 1.625rem;
+        padding: 1rem 0 0 1rem;
+    }
+
+    .saveButton {
+        margin: 1.5rem auto;
+        width: 11.375rem;
+        height: 4.5rem;
+        font-size: 2.215rem;
+    }
+
+    .ind_slope {
+        transform: rotate(35deg);
+    }
+
+
+    /* Daily Detail Data Page Web */
+    .dataContainer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 64.58%;
+        margin: 0 auto;
+    }
+
+    .dataBox {
+        padding: 0.625rem;
+    }
+
+    .dataDatail {
+        width: 45%;
+        margin: 0%;
+        margin-bottom: 7rem;
+    }
+
+    .dataDatail p {
+        margin: 0 auto 8px auto;
+    }
+
+    .dataNumber {
+        font-size: 4.5rem;
+    }
+
+    .dataNumber span {
+        font-size: 2rem;
+    }
+
+
+    /* Motivation Web */
+    .motiContainer {
+        flex-direction: row;
+        justify-content: space-between;
+        width: 61.77%;
+        margin: 0 auto;
+    }
+
+    .selfRank {
+        margin: 0;
+        width: 27.74%;
+        height: 29rem;
+        margin-top: 7.375rem;
+    }
+
+    .rank {
+        padding: 0.75rem;
+    }
+
+    .motiPhoto {
+        width: 7.375rem;
+    }
+
+    .badge {
+        width: 8.875rem;
+        padding: 1.5rem;
+    }
+
+    .badgeInfo {
+        width: 1.75rem;
+        top: 64%;
+        left: 31.5%;
+    }
+
+    .leaderboard {
+        margin-top: 0;
+        width: 41.48%;
+    }
+
+    .ranking {
+        font-size: 1.625rem;
+    }
+
+    .crown {
+        width: 3.125rem;
+    }
+
+    .numberOne {
+        width: 7.0625rem;
+    }
+
+    .secondLine {
+        width: 74.8%;
+    }
+
+    .lineTwo_pic {
+        width: 5.4375rem;
+    }
+
+    .thirdLine {
+        width: 59.96%;
+    }
+
+    .board {
+        width: 100%;
+    }
+
+    .boardLine {
+        height: 4.75rem;
+    }
+
+    .boardPic {
+        width: 3.75rem;
+    }
+
+    .board span {
+        font-size: 1.25rem;
+    }
+
+
+    /* more data page Web */
+    .data-top, .individual-table {
+        width: 56.09%;
+    }
+
+    .data-top .tableTop {
+        font-size: 1.35rem;
+    }
+
+    .data-top .tableTop img {
+        width: 2.563rem;
+    }
+
+    .data-table .ind_slope {
+        transform: rotate(18deg);
+    }
+
+    .large_slope {
+        border-bottom: 1px solid #CFCFCF;
+        transform: rotate(12deg);
+    }
+
+    .topright {
+        margin-top: 5rem;
+        height: 3.063rem;
+    }
+
+    .topright select {
+        width: 8.875rem;
+        font-size: 1.625rem;
+    }
+
+    .individual-table th {
+        font-size: 1.625rem;
+    }
+
+    .individual-table tr {
+        height: 4.375rem;
+    }
+
+    .data-table .slope {
+        transform: rotate(30deg);
+    }
+
+    .table-weight, .table-exercise {
+        width: 18%;
+    }
+
+    .boardRank {
+        padding: 2rem;
+    }
+
+    .year {
+        margin-left: 0.5rem;
+    }
+
+
+    /* About Me Page Web */
+    .mood {
+        right: 61%;
+        bottom: 11.5%;
+    }
+
+    .mood-change {
+        height: 26px;
+        width: 90px;
+    }
+
+    .mood-change .ball {
+        height: 35px;
+        width: 35px;
+    }
+
+    .checkbox:checked+.mood-change .ball {
+        transform: translateX(63px);
+    }
+
+    .moon, .sun {
+        height: 30px;
+    }
+
+    .edit-button {
+        width: 2.375rem;
+        margin-right: 9%;
+    }
+
+    .aboutme-delete {
+        width: 3.5rem;
+        margin-right: 8.8%;
+    }
+
+    .aboutme-body, .edit-body {
+        display: flex;
+        width: 100%;
+        margin: 0;
+        justify-content: space-between;
+    }
+
+    .sam-detail {
+        height: 30%;
+        padding-left: 20.45%;
+        font-size: 1.625rem;
+        padding-top: 0.5rem;
+        width: 32%;
+    }
+
+    .edit-detail {
+        height: 30%;
+        padding-left: 21.45%;
+        width: 30%;
+        font-size: 1.625rem;
+    }
+
+    .edit-detail p {
+        font-size: 1.375rem;
+    }
+
+    .user-info {
+        height: 1.813rem;
+        margin-bottom: 1rem;
+    }
+
+    .user-info input, .user-info li {
+        height: 1.8rem;
+        font-size: 1.625rem;
+    }
+
+    .user-info li {
+        float: right;
+        width: 50.71%;
+    }
+
+    ::placeholder {
+        font-size: 1.3rem;
+    }
+
+    .userphoto, .edit-body img {
+        width: 12rem;
+    }
+
+    .text-bio h2, .bio-detail {
+        font-size: 1.625rem;
+    }
+
+    .bio-detail {
+        height: 10.5rem;
+    }
+
+    .user-bio, .text-bio {
+        font-size: 1.625rem;
+        height: 18.89%;
+        margin: auto;
+        width: 24.63%;
+    }
+
+    .user-bio textarea {
+        font-size: 1.625rem;
+        height: 10.5rem;
+        margin-top: 0.5rem;
+    }
+
+    .edit-page button {
+        width: 9.48%;
+    }
+
+    .edit-page .saveButton {
+        margin: 7rem auto 5rem auto;
+    }
+
+}
+
+.highcharts-figure,
+.highcharts-data-table table {
+    min-width: 360px;
+    max-width: 800px;
+    margin: 1em auto;
+}
+
+.highcharts-data-table table {
+    font-family: Verdana, sans-serif;
+    border-collapse: collapse;
+    border: 1px solid #ebebeb;
+    margin: 10px auto;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+}
+
+.highcharts-data-table caption {
+    padding: 1em 0;
+    font-size: 1.2em;
+    color: #555;
+}
+
+.highcharts-data-table th {
+    font-weight: 600;
+    padding: 0.5em;
+}
+
+.highcharts-data-table td,
+.highcharts-data-table th,
+.highcharts-data-table caption {
+    padding: 0.5em;
+}
+
+.highcharts-data-table thead tr,
+.highcharts-data-table tr:nth-child(even) {
+    background: #f8f8f8;
+}
+
+.highcharts-data-table tr:hover {
+    background: #f1f7ff;
+}

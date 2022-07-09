@@ -1,0 +1,805 @@
+* {
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0%;
+}
+
+h1 {
+    margin: 5.0625rem auto 1.5625rem auto;
+    text-align: center;
+    font-size: 1.125rem;
+    font-weight: normal;
+}
+
+h2 {
+    font-size: 1rem;
+}
+
+h3 {
+    font-size: 0.875rem;
+}
+
+p {
+    font-size: 0.875rem;
+}
+
+a {
+    color: inherit;
+}
+
+.error {
+    width: 50%;
+    height: 40px;
+    border-radius: 0.5rem;
+    margin: 0 auto;
+    position: absolute;
+    top: 280px;
+    left: 25%;
+}
+
+.errormsg {
+    color: red;
+    line-height: 40px;
+    text-align: center;
+    font-style: italic;
+    text-decoration: underline;
+}
+
+.errorPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.errorPage p {
+    font-size: 2rem;
+}
+
+/* Normal Header */
+.normal-header {
+    height: 55px;
+    width: 100%;
+    background-color: #668cbb;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.normalNav {
+    width: 57.33%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 40%;
+}
+
+.normal-logo {
+    width: 76px;
+}
+
+.normal-login {
+    color: #668CB8;
+    background-color: #FFFFFF;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.24);
+    border-radius: 0.5rem;
+    width: 59px;
+    height: 38px;
+    border: none;
+}
+
+
+/* Landing Page */
+.mobile-head {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-top: 16%;
+}
+
+.mobile-head p,
+.ABOUT-DIABETES,
+.ABOUT-WEBSITE,
+.bottom-word {
+    font-size: 1.375rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+.web-head {
+    display: none;
+}
+
+.landing-background {
+    margin-top: 0.5rem;
+    height: 25.985%;
+}
+
+.landing-background img {
+    height: 100%;
+    width: 100%;
+}
+
+.twobuttons {
+    width: 78.67%;
+    margin: 0 auto;
+}
+
+.twobuttons button {
+    color: #668CB8;
+    background-color: #FFFFFF;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.24);
+    border-radius: 0.5rem;
+    border: #EDEDED;
+    width: 100%;
+    height: 7rem;
+}
+
+.ABOUT-DIABETES {
+    margin: 1.875rem 0 2.438rem 0;
+}
+
+.bottom-word {
+    margin: 3rem 2.5rem 2rem 2.5rem;
+}
+
+
+/* About Diabetes Page */
+.aboutDia-body {
+    width: 81.33%;
+    margin: 0 auto;
+}
+
+.article-intro h2 {
+    padding-top: 0.5em;
+}
+
+.article-intro p {
+    padding-top: 0.375em;
+}
+
+.article-type p {
+    padding-top: 0.125em;
+}
+
+.article-type h3 {
+    padding-top: 0.625em;
+    text-decoration: underline;
+}
+
+.item2 img {
+    width: 100%;
+    padding-top: 1.25em;
+    padding-bottom: 1.875em;
+}
+
+.article-moreInfor p {
+    padding-top: 0.45em;
+    color: #668cbb;
+}
+
+.article-moreInfor a {
+    color: #668cbb;
+}
+
+.aboutDia-top div:last-child {
+    padding-bottom: 1.875em;
+    padding-top: 1.25em;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.article-moreInfor a {
+    text-decoration: underline;
+}
+
+.aboutDia-footer {
+    padding-top: 1em;
+    padding-bottom: 1.25em;
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+.aboutDia-footer a {
+    color: black
+}
+
+
+/* About This Website Page */
+.aboutWeb-body {
+    width: 81.33%;
+    margin: 0 auto;
+    padding: 0 4% 0 4%;
+}
+
+.aboutWeb-body img {
+    width: 100%;
+}
+
+.teamwork img {
+    padding-top: 1.25rem;
+}
+
+.article h2 {
+    padding: 1em 0 0.3125em 0;
+}
+
+.aboutWeb-footer {
+    padding-top: 1em;
+    padding-bottom: 1.25em;
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+.aboutWeb-footer a {
+    color: black
+}
+
+.email {
+    list-style: none;
+    padding: 0.3725em 0 1em 0;
+    letter-spacing: -0.5px;
+}
+
+.login-background {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    transform: translate(0%, 0%);
+    background-image: url("/login-background.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+    zoom: 1;
+}
+
+
+/* Login */
+.alertMessage {
+    display: flex;
+    justify-content: center;
+    color: red;
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.login {
+    margin: 200px 10.67% 0 10.67%;
+    border-radius: 0.5rem;
+    border: 1px solid #EDEDED;
+    box-shadow: 3px 3px #EDEDED;
+    background-color: white;
+}
+
+.loginContainer {
+    padding: 1rem 4.8% 0 3.39%;
+}
+
+.loginContainer input {
+    width: 100%;
+    margin: 0.25rem 0 0.75rem;
+    height: 1.75rem;
+    border-radius: 0.4375rem;
+    border: 1px solid #707070;
+}
+
+::placeholder {
+    color: #CFCFCF;
+    font-size: 0.75rem;
+    font-style: italic;
+}
+
+.ForgetPassword {
+    float: right;
+    text-decoration: none;
+    color: black;
+    font-size: 0.75rem;
+}
+
+.middle-login {
+    display: block;
+    height: 2rem;
+    width: 5.0625rem;
+    color: white;
+    background-color: #668CB8;
+    border-radius: 0.5rem;
+    border: none;
+    font-size: 1rem;
+    margin: 0.75rem auto;
+}
+
+.mid-login {
+    margin-top: 8%;
+    align-items: center;
+}
+
+.shiftRole {
+    padding-bottom: 3%;
+    text-decoration: underline;
+    text-align: center;
+}
+
+.shiftRole a {
+    color: black;
+}
+
+
+/* Forget Password Page */
+#msg {
+    font-size: 0.875rem;
+}
+
+.forget-error {
+    width: 50%;
+    height: 40px;
+    border-radius: 0.5rem;
+    margin: 0 auto;
+    position: absolute;
+    top: 225px;
+    left: 25%;
+}
+
+.forget-errormsg {
+    color: red;
+    line-height: 40px;
+    text-align: center;
+    font-style: italic;
+    text-decoration: underline;
+}
+
+.forgetpassTitle {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding-top: 0.75rem;
+    font-size: 1.125rem;
+    display: flex;
+    justify-content: center;
+}
+
+.forget-container {
+    width: 93.22%;
+    margin: 1rem auto;
+}
+
+.forget-container label,
+button.sentcode {
+    font-size: 0.875rem;
+}
+
+.forget-container input {
+    width: 98.5%;
+    margin: 0.25rem 0 0.75rem;
+    height: 1.5rem;
+    border-radius: 0.438rem;
+    border: 1px solid #707070;
+    outline: none;
+}
+
+button.sentcode,
+.middle-login {
+    background-color: #668CB8;
+    border: none;
+    color: white;
+}
+
+button.sentcode {
+    width: 100%;
+}
+
+
+/* Change Password Page */
+.changepass-container {
+    width: 73.33%;
+    margin: auto;
+}
+
+.changepass-container input {
+    width: 100%;
+    margin: 0.313rem auto 1rem auto;
+}
+
+button.change-sentcode,
+.change-login {
+    background-color: #668CB8;
+    border: none;
+    color: white;
+}
+
+.change-container input ::placeholder,
+.change-sendcode ::placeholder {
+    color: #CFCFCF;
+    font-size: 0.75rem;
+    font-style: italic;
+}
+
+button.change-sentcode,
+.change-sendcode input,
+.change-login,
+.changepass-container input {
+    height: 1.75rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    padding-left: 0.5rem;
+}
+
+button.change-sentcode {
+    width: 100%;
+}
+
+.change-login {
+    display: block;
+    height: 2rem;
+    width: 19%;
+    margin: 1rem auto;
+}
+
+
+
+/* Ipad Screen */
+@media screen and (min-width: 800px) and (max-width: 1400px) {
+    html {
+        font-size: 22px;
+    }
+
+    /* Normal Header iPad */
+    .normal-header {
+        height: 80px;
+    }
+
+    .normalNav {
+        width: 49.33%;
+        padding-left: 48%;
+    }
+
+    .normal-logo {
+        width: 98px;
+    }
+
+    .normal-login {
+        width: 90px;
+        height: 40px;
+        font-size: 0.8rem;
+    }
+
+    /* Landing Page iPad*/
+    .twobuttons {
+        width: 50%;
+    }
+
+    .mobile-head {
+        margin-top: 10%;
+    }
+
+    /* About Diabetes Page iPad */
+    iframe {
+        height: 400px;
+    }
+
+    /* Login iPad */
+    .login {
+        margin: 265px 24.17% 0 24.17%;
+    }
+
+    .middle-login {
+        margin: 0.75rem auto;
+    }
+
+    /* Forget Password iPad */
+    .forget-body .login {
+        margin: 180px 24.17% 0 24.17%;
+        ;
+    }
+
+    .forget-container input {
+        font-size: 1rem;
+    }
+
+    /* Change Password Page */
+    .changepass-container {
+        width: 43.6%;
+    }
+
+    .change-login {
+        width: 12%;
+    }
+}
+
+
+/* Web Screen */
+@media screen and (min-width: 1400px) {
+    h1 {
+        margin: 13.75rem auto 3.9375rem auto;
+        font-size: 2.375rem;
+    }
+
+    h2 {
+        font-size: 2.215em;
+    }
+
+    h3 {
+        font-size: 1.625rem;
+    }
+
+    p {
+        font-size: 1.625rem;
+    }
+
+    /* Normal Header Web */
+    .normal-header {
+        height: 8.75rem;
+        z-index: 1;
+    }
+
+    .normalNav {
+        width: 96%;
+        padding: 0 2%;
+    }
+
+    .normal-logo {
+        width: 187px;
+    }
+
+    .normal-login {
+        border-radius: 1.25rem;
+        width: 13.1875rem;
+        height: 4.375rem;
+        font-size: 1.875em;
+    }
+
+
+    /* Landing Page Web*/
+    .landing-body {
+        position: relative;
+    }
+
+    .mobile-head {
+        display: none;
+    }
+
+    .web-head,
+    .twobuttons,
+    .bottom-word {
+        position: absolute;
+    }
+
+    .web-head {
+        display: block;
+        top: 200px;
+        margin: 0 32%;
+    }
+
+    .web-head p {
+        font-size: 3.5rem;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .twobuttons {
+        position: absolute;
+        top: 45rem;
+        justify-content: space-between;
+        width: 68.43%;
+        margin: 0 15.729% 0 15.729%;
+        display: flex;
+    }
+
+    .twobuttons button {
+        border-radius: 1rem;
+        width: 30.75rem;
+        height: 7.5rem;
+        justify-content: center;
+    }
+
+    .ABOUT-DIABETES {
+        margin: 0;
+    }
+
+    .ABOUT-DIABETES,
+    .ABOUT-WEBSITE {
+        font-size: 2.375rem;
+    }
+
+    .bottom-word {
+        top: 57rem;
+        font-size: 2.5rem;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    /* About The Diabetes Page Web */
+    .aboutDia-top div:last-child {
+        position: relative;
+        width: 46.83%;
+    }
+
+    .aboutDia-top {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .aboutDia-top div:first-child {
+        width: 50.79%;
+    }
+
+    .article-intro p {
+        padding-top: 0.6875rem;
+    }
+
+    .aboutDia-bottom {
+        display: grid;
+        grid-template-columns: 46.77% auto;
+        gap: 0px 30px;
+        padding: 50px 0px 0px 0px;
+    }
+
+    .article-type h3 {
+        padding-top: 1.25rem;
+    }
+
+    .item2 img {
+        padding: 0px;
+    }
+
+    .item1 {
+        grid-area: 1 / 2 / span 2 / span 1;
+    }
+
+    .aboutDia-footer {
+        padding: 1.875rem 0px;
+    }
+
+    .article h2 {
+        padding: 0 0 0.6875em 0;
+    }
+
+
+    /* About This Website Page Web */
+    .aboutWeb-top article {
+        padding: 1.25em 1.25em 0 0;
+    }
+
+    .aboutWeb-top {
+        display: grid;
+        grid-template-columns: 42.32% auto;
+        gap: 0px 30px;
+        padding: 0px 0px 107px 0px;
+    }
+
+    .aboutWeb-top div:first-child {
+        grid-area: 1 / 2 / span 1 / span 1;
+    }
+
+    .arrow-back {
+        width: 2.38%;
+        padding-left: 2.1%;
+    }
+
+    .aboutWeb-bottom {
+        display: grid;
+        grid-template-columns: 47.866% auto;
+        gap: 0px 30px;
+    }
+
+    .teamwork img {
+        padding: 0%;
+    }
+
+    .aboutWeb-bottom article {
+        padding: 1.25em 0 0 1.25rem;
+    }
+
+    .email {
+        font-size: 1.625rem;
+    }
+
+    /* Login Web */
+    ::placeholder {
+        font-size: 1.25rem;
+    }
+
+    .login {
+        margin: 300px 34.17% 0 34.17%;
+    }
+
+    .loginTitle {
+        font-size: 2.375rem;
+        font-weight: bold;
+    }
+
+    .ForgetPassword {
+        font-size: 1.25rem;
+    }
+
+    .shiftRole {
+        font-size: 1.75rem;
+    }
+
+    .loginContainer {
+        padding: 2rem 13.16% 0 13.16%;
+    }
+
+    .loginContainer input {
+        height: 3.0625rem;
+        margin: 0.5625rem 0 1.125rem;
+        font-size: 1.5rem;
+    }
+
+    .mid-login {
+        margin-top: 10%
+    }
+
+    .middle-login {
+        display: block;
+        height: 3.875rem;
+        width: 30.82%;
+        font-size: 2.215rem;
+        margin: 2rem auto;
+    }
+
+
+    /* Forget Password Page Web*/
+    #msg {
+        font-size: 1.625rem;
+    }
+
+    .forget-error {
+        top: 360px;
+    }
+
+    .forgetpassTitle {
+        padding-top: 0.75rem;
+        font-size: 2.375rem;
+    }
+
+    .forget-container {
+        margin-top: 2rem;
+        width: 73.68%;
+    }
+
+    .forget-container input {
+        margin: 0.563rem 0 1.125rem;
+        height: 3.063rem;
+        padding-left: 1rem;
+        border-radius: 0.625rem;
+        font-size: 1.5rem;
+    }
+
+    .forget-container label {
+        font-size: 1.625rem;
+    }
+
+    .forget-container input::placeholder,
+    .sendcode ::placeholder,
+    button.sentcode {
+        font-size: 1.5rem;
+    }
+
+
+    /* Change Password Page */
+    .changepass-container {
+        width: 23.33%;
+        font-size: 1.625rem;
+    }
+
+    .changepass-container input {
+        margin: 0.313rem auto 2rem auto;
+    }
+
+    button.change-sentcode,
+    .change-sendcode input,
+    .change-login,
+    .changepass-container input {
+        height: 3.063rem;
+        font-size: 1.625rem;
+        padding-left: 1rem;
+    }
+
+    .change-login {
+        width: 8.17%;
+        height: 3.875rem;
+        font-size: 2.215rem;
+    }
+}

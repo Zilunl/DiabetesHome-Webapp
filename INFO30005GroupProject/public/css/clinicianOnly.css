@@ -1,0 +1,861 @@
+* {
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0%;
+}
+
+main {
+    margin-bottom: 5%;
+}
+
+.clinician-header {
+    height: 8.75rem;
+    width: 100%;
+    background-color: #668cbb;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.clinician-header div:first-child {
+    padding-left: 2.5%;
+}
+
+.clinician-header div:last-child {
+    padding-right: 2%;
+    justify-content: end;
+}
+
+.clinician-logo {
+    height: 7.4375rem;
+    width: 11.6875rem;
+}
+
+.clinician-navBar {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    margin-top: 0px;
+}
+
+.clinician-navBar a {
+    font-size: 30px;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.clinician-logOut {
+    color: #668CB8;
+    background-color: #FFFFFF;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.24);
+    border-radius: 1.25rem;
+    width: 13.1875rem;
+    height: 4.375rem;
+    border: none;
+    font-size: 1.875em;
+}
+
+.clinician-navBar a:hover {
+    display: inline-block;
+    background-color: #87b7f2;
+    border-radius: 5px;
+    transition: 0.3s ease;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+
+/* Dashboard Page */
+.top {
+    margin: 13.75rem auto 1.063rem auto;
+    display: flex;
+    width: 75rem;
+}
+
+.topleft {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.25rem;
+    width: 17.375rem;
+}
+
+.topleft span {
+    display: flex;
+    align-items: center;
+    padding: 0.1875rem;
+}
+
+.topleft img {
+    width: 2.5625rem;
+    margin-right: 1.9375rem;
+}
+
+.topright {
+    padding: 5.2rem 0 0 44rem;
+    width: 14.688rem;
+    height: 3.563rem;
+    display: flex;
+    align-items: stretch;
+}
+
+.topright form {
+    display: flex;
+    border: 1px solid black;
+    border-radius: 2.25rem;
+    width: 100%;
+}
+
+.topright input {
+    background: transparent;
+    padding-left: 1rem;
+    font-size: 1.625rem;
+    color: inherit;
+    border: 1px solid transparent;
+    border-radius: inherit;
+    width: 80%;
+}
+
+.topright input::placeholder {
+    color: #CFCFCF;
+    font-style: italic;
+}
+
+.topright form button {
+    background-image: url("/30005image/Icon\ ionic-ios-search.png");
+    padding-right: 2.5rem;
+    border: none;
+    background-color: white;
+    opacity: 0.2;
+    width: 1.75rem;
+}
+
+.topright form button img {
+    text-indent: -999px;
+    overflow: hidden;
+    height: 1.688rem;
+    padding-top: 0.5rem;
+    margin: 0;
+    border: 1px solid transparent;
+    border-radius: inherit;
+    cursor: pointer;
+}
+
+table {
+    margin: 0 auto 5rem auto;
+    width: 75rem;
+}
+
+table,
+th,
+td {
+    border: 1px solid #CFCFCF;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+th,
+td {
+    font-size: 1.625rem;
+}
+
+th {
+    background-color: #BBD9F6;
+    height: 4.563rem;
+}
+
+a {
+    color: black;
+}
+
+td img {
+    width: 2.5rem;
+    vertical-align: middle;
+}
+
+
+.one-slope {
+    width: 11.625rem;
+    background-color: white;
+    padding: 0;
+}
+
+.slope, .inside_slope, .ind_slope, .large_slope{
+    border-bottom: 1px solid #CFCFCF;
+}
+
+.slope {
+    position: relative;
+    transform: rotate(20deg);
+}
+
+.inside_slope {
+    transform: rotate(15deg);
+}
+
+.ind_slope {
+    transform: rotate(18deg);
+}
+
+.large_slope {
+    transform: rotate(8deg);
+}
+
+td {
+    height: 3.563rem;
+}
+
+.one-weight,
+.one-exercise {
+    width: 10.75rem;
+}
+
+
+/* Individual Patient Page */
+h1 {
+    margin: 13.75rem auto 3.9375rem auto;
+    font-size: 2.375rem;
+    text-align: center;
+}
+
+.individual-body {
+    width: 87.18%;
+    justify-content: space-between;
+    margin: 0 auto;
+    display: flex;
+}
+
+.individual-left {
+    width: 25.507%;
+}
+
+.individual-left form {
+    border: none;
+}
+
+.individual-data {
+    width: 64.33%;
+    height: 64.625rem;
+}
+
+.personal-info {
+    height: 50.3125rem;
+    width: 100%;
+    border: 1px solid #D3D3D3;
+    border-radius: 1.3125rem;
+}
+
+.edit {
+    margin: 0.8125rem 1.4375rem 0 24rem;
+    height: 1.5625rem;
+    width: 1.25rem;
+}
+
+.portrait {
+    width: 10.9375rem;
+    display: block;
+    margin: 0 auto;
+}
+
+h2 {
+    text-align: center;
+    font-weight: normal;
+}
+
+.requirement {
+    margin: 2.4375rem 1.125rem 2.1875rem 1.125rem;
+}
+
+.blood-glucose,
+.weight,
+.exercise,
+.insulin {
+    width: 11.8rem;
+    height: 11.5rem;
+    border-radius: 1.125rem;
+    border: 1px solid #CFCFCF;
+    text-align: center;
+    color: #668CB8;
+    font-size: 1rem;
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.24);
+}
+
+.top-two,
+.bottom-two {
+    display: flex;
+    justify-content: space-between;
+}
+
+h4 {
+    font-size: 1.125rem;
+    padding: 0;
+}
+
+h5 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.top-two {
+    margin-bottom: 3.1875rem;
+}
+
+.blood-glucose img,
+.weight img,
+.exercise img,
+.insulin img {
+    width: 6.75rem;
+    display: block;
+    margin: 0.5625rem auto 0.5625rem auto;
+}
+
+.message {
+    width: 26.6875rem;
+    height: 14.25rem;
+}
+
+.support {
+    width: 91%;
+    height: 9.19rem;
+    border: 1px solid #707070;
+    margin: 2.125rem 0 0.8125rem 0;
+    border-radius: 1.625rem;
+    font-size: 1.625rem;
+    padding: 1rem;
+}
+
+.message-save,
+.note-save,
+.more-detail {
+    border: none;
+    background-color: #668CB8;
+    color: white;
+    font-size: 2.125rem;
+    border-radius: 0.5rem;
+}
+
+.message-save {
+    float: right;
+    width: 9.9375rem;
+    height: 3.875rem;
+}
+
+.individual-data {
+    width: 64.33%;
+    height: 64.625rem;
+}
+
+.individual-data {
+    width: 64.33%;
+    height: 64.625rem;
+}
+
+.individual-top,
+.top-left,
+.top-left span {
+    display: flex;
+}
+
+.top-left {
+    flex-direction: column;
+    font-size: 1.25rem;
+    padding-right: 30.5rem;
+    width: 19rem;
+}
+
+.top-left span {
+    align-items: center;
+    padding: 0.1875rem;
+}
+
+.top-left img {
+    width: 2.5625rem;
+    margin-right: 1.9375rem;
+}
+
+.top-right {
+    width: 18.8125rem;
+    height: 3.0625rem;
+    margin-top: 5.8rem;
+}
+
+.top-right form {
+    height: 100%;
+}
+
+select {
+    background-color: #668CB8;
+    border: 1px solid #707070;
+    color: white;
+    font-size: 1.625rem;
+    width: 8.875rem;
+    height: 100%;
+}
+
+select a:hover {
+    width: 8.875rem;
+}
+
+.year {
+    float: right;
+}
+
+.individual-table {
+    margin-top: 0.625rem;
+    width: auto;
+    height: 55.75rem;
+    overflow-y: auto;
+}
+
+.sam-table {
+    width: 100%;
+    margin-left: 0;
+}
+
+tr td {
+    height: 3rem;
+}
+
+th {
+    background-color: #BBD9F6;
+    height: 4.375rem;
+}
+
+.leftone {
+    width: 9rem;
+    background-color: white;
+    padding: 0;
+}
+
+.sam-table .slope {
+    transform: rotate(20deg);
+}
+
+.table-weight,
+.table-exercise {
+    width: 10.25rem;
+}
+
+.note {
+    height: 36.188rem;
+    margin: 4.313rem 7.6875rem 1.875rem 7.6875rem;
+    display: flex;
+}
+
+.previous-note {
+    border-radius: 1.563rem 0 0 1.563rem;
+    height: 100%;
+    width: 37.375rem;
+}
+
+h6 {
+    font-size: 2.125rem;
+    font-weight: bold;
+}
+
+h6 {
+    padding: 1.188rem 0 0.938rem 1.625rem;
+    border-radius: 1.563rem 0 0 0;
+}
+
+.pre-note {
+    padding-top: 1.625rem;
+    height: 30rem;
+}
+
+.pre-note ul {
+    width: 100%;
+    height: 30rem;
+    table-layout: fixed;
+    overflow: hidden;
+    overflow-y: scroll;
+    padding-left: 0;
+}
+
+.pre-note li {
+    list-style-type: none;
+    font-size: 1.625rem;
+}
+
+li:hover {
+    background-color: #BBD9F6;
+}
+
+li div {
+    display: table-cell;
+}
+
+.detail {
+    width: 25rem;
+    padding-left: 1.123rem;
+}
+
+.time {
+    font-size: 1.25rem;
+}
+
+.previous-note,
+h6,
+.subject,
+.today-note {
+    border: 1px solid #707070;
+}
+
+.add-note {
+    width: 77rem;
+    height: 100%;
+}
+
+.subject {
+    width: 99.9%;
+    height: 4.56rem;
+    border-radius: 0 1.563rem 0 0;
+}
+
+.subject input {
+    border: none;
+    border-radius: 0;
+    height: 96%;
+    width: 55%;
+    padding-left: 1rem;
+    font-size: 2.125rem;
+    font-weight: bold;
+}
+
+.subject input::placeholder,
+.today-note::placeholder {
+    color: #CFCFCF;
+}
+
+.today-note {
+    height: 31.51rem;
+}
+
+.today-add {
+    width: 97%;
+    border: none;
+    height: 29.5rem;
+    padding: 1rem;
+    font-size: 1.625rem;
+}
+
+.more-detail {
+    width: 12.5rem;
+    height: 3.875rem;
+    margin-left: 29rem;
+}
+
+.note-save {
+    float: right;
+    margin: 0 7.6875rem 4rem 0;
+    width: 13.25rem;
+    height: 5.188rem;
+}
+
+.previous-note button {
+    float: right;
+    width: 12.5rem;
+    height: 3.875rem;
+    margin: 1.75rem 1.125rem 2.938rem 0;
+}
+
+
+/* Edit Data Page */
+.editData-body {
+    font-size: 22px;
+    font-size: 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.editData-body form {
+    width: 40%;
+    padding-left: 25%;
+}
+
+.editData-body div:first-child {
+    padding-top: 1.25rem;
+}
+
+.chooseRange {
+    padding-bottom: 3.625rem;
+    width: 110%;
+}
+
+.chooseBox {
+    width: 25px;
+    height: 25px;
+}
+
+.textBox {
+    width: 4rem;
+    font-size: 20px;
+}
+
+::-webkit-input-placeholder {
+    color: #CFCFCF;
+    font-size: 20px;
+    font-style: italic;
+    font-style: bold;
+}
+
+.textLine {
+    padding-top: 0.85rem;
+    padding-left: 5.5%;
+}
+
+.saveButton {
+    color: #FFFFFF;
+    background-color: #668CB8;
+    border-radius: 8px;
+    width: 212px;
+    height: 83px;
+    border: none;
+    font-size: 34px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 2%;
+}
+
+
+/* New Patient Page */
+.newPatient-body {
+    font-size: 22px;
+    display: flex;
+}
+
+.newPatient-body .infoList {
+    width: 25.5%;
+    height: 52.1%;
+    padding-left: 23%;
+}
+
+.newPatient-body .inputBox {
+    float: right;
+    right: 50%;
+}
+
+.newPatient-body .chooseList {
+    width: 36.5%;
+    height: 52.1%;
+    margin: 0 auto auto 10.6%;
+}
+
+.infoAdd {
+    font-size: 26px;
+    padding-top: 4.8%;
+}
+
+.infoList input {
+    width: 242px;
+    height: 29px;
+    border-radius: 10px;
+    border: 1px solid;
+}
+
+#briefBio {
+    width: 242px;
+    border-radius: 10px;
+    height: 100px;
+}
+
+.category {
+    font-size: 26px;
+    padding-left: 0.73%;
+}
+
+.codeBox .textBox {
+    width: 315px;
+    height: 40px;
+    text-align: center;
+}
+
+
+/* About Me Page */
+
+.aboutMe-body {
+    display: flex;
+    margin: 0 auto;
+    margin-top: 9.75em;
+}
+
+.aboutMe-left {
+    text-align: center;
+    font-size: 1.625em;
+    margin-left: 32.313rem;
+}
+
+.self-picture {
+    width: 15.3125rem;
+}
+
+.aboutMe-right {
+    width: 33.875rem;
+    align-items: center;
+    margin-left: 17.813rem;
+}
+
+.aboutMe-right h2 {
+    margin-bottom: 0.375rem;
+}
+
+.aboutMe-right textarea {
+    font-size: 1.625em;
+    margin: auto;
+    width: 83.1%;
+    border: 1px solid #EDEDED;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.24);
+    border-radius: 1.25rem;
+    height: 9.2rem;
+    padding: 3.563rem 2.813rem;
+
+
+}
+
+.aboutMe-right .saveButton {
+    margin-top: 8%;
+}
+
+
+/* Comment List Page*/
+.commentSearch {
+    width: 58%;
+    display: flex;
+    justify-content: end;
+    margin: 0 auto;
+}
+
+.commentSearch form {
+    width: 24.41%;
+}
+
+.commentSearch input {
+    border: 1px solid;
+    width: 97%;
+    border-radius: 2.25rem;
+    height: 3rem;
+    font-size: 1.625rem;
+    padding-left: 0.5rem;
+}
+
+.commentSearch input::placeholder {
+    padding: 12px;
+}
+
+.commentSearch img {
+    width: 1.6875rem;
+    position: absolute;
+    top: 31.5%;
+    right: 22%;
+}
+
+.commentSearch button {
+    display: contents;
+}
+
+.notFound {
+    display: table;
+    margin: 0 auto;
+    font-size: 2.375rem;
+    color: red;
+    text-decoration: underline;
+    font-style: italic;
+    padding: 20px;
+}
+
+.commentLine {
+    width: 58%;
+    margin: 0 auto;
+    border: 1px solid #707070;
+    display: flex;
+}
+
+.commentLine span {
+    font-size: 1.625rem;
+}
+
+.readComment {
+    width: 0.75rem;
+    padding: 0.25rem;
+    position: absolute;
+}
+
+.commentLeft {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem;
+    width: 12%;
+}
+
+.commentLeft img {
+    width: 4.625rem;
+}
+
+.patientName{
+    text-align: center;
+}
+
+.commentRight {
+    width: 88%;
+    margin: 1.5625rem auto;
+}
+
+.commentData {
+    padding: 0 5px;
+}
+
+.commentLower {
+    background-color: #AAA9A9;
+    padding: 0 5px;
+}
+
+.commentUpper {
+    background-color: #F29393;
+    padding: 0 6px;
+}
+
+.commentRight div {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 1%;
+}
+
+.commentRight p {
+    margin-top: 0.75rem;
+    font-size: 1.625rem;
+}
+
+
+/* Previous Note */
+.noteLine {
+    width: 50.36%;
+    margin: 0 auto;
+    border: 1px solid #707070;
+    padding: 1rem;
+}
+
+.notelineTop {
+    display: flex;
+    justify-content: space-between;
+}
+
+.notelineTop span:first-child {
+    font-size: 1.625rem;
+    font-weight: bold;
+}
+
+.notelineTop span:last-child {
+    font-size: 1.25rem;
+}
+
+.notelineBottom {
+    padding-top: 1.25rem;
+}
